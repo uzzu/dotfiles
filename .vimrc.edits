@@ -1,0 +1,20 @@
+" indent settings
+set tabstop=4
+set autoindent
+set expandtab
+set smartindent
+set shiftwidth=4
+set softtabstop=4
+set smarttab
+
+" search settings
+set ignorecase
+set smartcase
+set wrapscan
+set noincsearch
+set hlsearch
+set complete+=k
+
+" increment settings
+set nrformats-=octal
+

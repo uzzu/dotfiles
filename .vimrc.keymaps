@@ -1,0 +1,19 @@
+" insert mode keymap
+imap <C-f> <Right>
+imap <C-b> <Left>
+imap <C-Space> <C-x><C-o>
+
+" normal mode keymap
+nmap <S-CR> o<esc>
+nmap j gj
+nmap k gk
+nmap <C-h> <C-w>h
+nmap <C-j> <C-w>j
+nmap <C-k> <C-w>k
+nmap <C-l> <C-w>l
+nmap ,s :%s/<C-v><C-m>//<CR>
+nmap ,,s :$s/\s*$//<CR>
+nmap <leader>i1 :set softtabstop=1<CR>:set shiftwidth=1
+nmap <leader>i2 :set softtabstop=2<CR>:set shiftwidth=2
+nmap <leader>i4 :set softtabstop=4<CR>:set shiftwidth=4
+

@@ -1,0 +1,58 @@
+" Init NeoBundle
+set nocompatible
+filetype off
+
+if has("vim_starting")
+    set runtimepath+=~/.vim/bundle/neobundle.vim
+endif
+call neobundle#rc(expand("~/.vim/bundle/"))
+
+NeoBundleFetch "Shougo/neobundle.vim"
+
+" vimproc
+NeoBundle "Shougo/neobundle.vim", {
+  \   "build": {
+  \     "windows":  "echo 'Sorry, cannot update...'",
+  \     "cygwin":   "make -f make_cygwin.mak",
+  \     "mac":      "make -f make_mac.mak",
+  \     "unix":     "make -f make_unix.mak"
+  \   }
+  \ }
+
+" misc
+NeoBundle "sudo.vim"
+NeoBundle "tpope/vim-surround"
+NeoBundle "Shougo/neocomplcache"
+NeoBundle "mattn/zencoding-vim"
+NeoBundle "Shougo/vimshell"
+
+" colorscheme
+NeoBundle "molokai"
+
+" lang
+NeoBundle "xmledit"
+NeoBundle "haml.zip"
+NeoBundle "JSON.vim"
+NeoBundle "actionscript.vim"
+NeoBundle "cespare/mxml.vim"
+NeoBundle "nginx.vim"
+NeoBundle "tpope/vim-markdown"
+NeoBundle "kchmck/vim-coffee-script"
+NeoBundle "yuroyoro/vim-python"
+NeoBundle "yuroyoro/vim-scala"
+NeoBundle "vim-ruby/vim-ruby"
+NeoBundle "postmodern/vim-yard"
+NeoBundle "tpope/vim-rails"
+NeoBundle "skwp/vim-rspec"
+NeoBundle "jondistad/vimclojure"
+NeoBundle "dag/vim2hs"
+NeoBundle "eagletmt/ghcmod-vim"
+NeoBundle "hail2u/vim-css3-syntax"
+NeoBundle "css_color.vim"
+NeoBundle "cakebaker/scss-syntax.vim"
+NeoBundle "taichouchou2/html5.vim"
+NeoBundle "taichouchou2/vim-javascript"
+NeoBundle "jQuery"
+
+filetype plugin indent on
+

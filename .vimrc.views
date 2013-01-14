@@ -1,0 +1,19 @@
+" view settings
+let g:molokai_original=1
+colorscheme molokai
+set t_Co=256
+syntax on
+set title
+set number
+set ruler
+set nowrap
+set showcmd
+set showmatch
+set scrolloff=10
+set wildmenu
+set statusline=%<%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ %l/%L
+set list
+set listchars=tab:>-,extends:<,trail:- ",eol:<
+highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
+au BufRead,BufNew * match JpSpace /＿/
+
