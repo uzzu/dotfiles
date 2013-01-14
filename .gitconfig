@@ -1,0 +1,28 @@
+[user]
+	name = uzzu
+	email = himeatball@gmail.com
+[github]
+	user = uzzu
+[core]
+	editor = vim
+[merge]
+	tool = vimdiff
+[color]
+	ui = true
+[alias]
+	tr = log --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	pr = pull --rebase
+	mnff = merge --no-ff
+	undo = reset --soft HEAD^
+	visual = "!gitk"
+	staging = diff --cache
+	di = diff HEAD~
+	dii = diff HEAD~~
+	diii = diff HEAD~~~
+	diiii = diff HEAD~~~~
+	diiiii = diff HEAD~~~~~
+
