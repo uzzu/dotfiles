@@ -3,7 +3,5 @@ my config files
 
 - tmux
 - zsh
-- git
 - vim
-- rvm
-- and MORE...?
+- and MORE...
