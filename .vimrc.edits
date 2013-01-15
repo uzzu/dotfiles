@@ -18,3 +18,40 @@ set complete+=k
 " increment settings
 set nrformats-=octal
 
+" neocomplecache.vim
+let g:acp_enableAtStartup=0
+let g:neocomplcache_enable_at_startup=1
+let g:neocomplcache_auto_completion_start_length=3
+let g:neocomplcache_enable_smart_case=1
+let g:neocomplcache_enable_camel_case_completion=1
+let g:neocomplcache_enable_underbar_completion=1
+let g:neocomplcache_min_syntax_length=3
+let g:neocomplcache_enable_quick_match=1
+let g:neocomplcache_max_list=30
+
+let g:neocomplcache_dictionary_filetype_lists={
+  \   "default": "",
+  \   "c": $HOME."/.vim/dict/c.dict",
+  \   "cpp": $HOME."/.vim/dict/cpp.dict",
+  \   "java": $HOME."/.vim/dict/java.dict",
+  \   "javascript": $HOME."/.vim/dict/javascript.dict",
+  \   "lua": $HOME."/.vim/dict/lua.dict",
+  \   "ocaml": $HOME."/.vim/dict/ocaml.dict",
+  \   "perl": $HOME."/.vim/dict/perl.dict",
+  \   "php": $HOME."/.vim/dict/php.dict",
+  \   "scheme": $HOME."/.vim/dict/scheme.dict",
+  \   "vim": $HOME."/.vim/dict/vim.dict",
+  \ }
+
+let g:neocomplcache_snippets_dir=$HOME."/.vim/snippets"
+
+" FileType毎のOmni補完を設定
+autocmd FileType python     setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType html       setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType css        setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType xml        setlocal omnifunc=xmlcomplete#CompleteTags
+autocmd FileType php        setlocal omnifunc=phpcomplete#CompletePHP
+autocmd FileType c          setlocal omnifunc=ccomplete#Complete
+autocmd FileType ruby       setlocal omnifunc=rubycomplete#Complete
+
