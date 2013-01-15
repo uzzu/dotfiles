@@ -10,7 +10,7 @@ call neobundle#rc(expand("~/.vim/bundle/"))
 NeoBundleFetch "Shougo/neobundle.vim"
 
 " vimproc
-NeoBundle "Shougo/neobundle.vim", {
+NeoBundle "Shougo/vimproc.vim", {
   \   "build": {
   \     "windows":  "echo 'Sorry, cannot update...'",
   \     "cygwin":   "make -f make_cygwin.mak",
