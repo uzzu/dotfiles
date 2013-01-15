@@ -1,8 +1,9 @@
 ## dotfiles
 my config files
 
-- git
 - tmux
 - zsh
+- git
 - vim
-- and etc...?
+- rvm
+- and MORE...?
