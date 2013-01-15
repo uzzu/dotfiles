@@ -1,5 +1,5 @@
 #!/bin/sh
-echo "linking..."
+echo "$0: Running."
 
 cd $(dirname $0)
 for dotfile in .?*; do
@@ -13,13 +13,17 @@ for dotfile in .?*; do
     .gitmodules)
       continue;;
     .*)
-      echo "$HOME/dotfile -> $PWD/$dotfile";
+      echo "$0: symlink $HOME/$dotfile -> $PWD/$dotfile";
       ln -nfs "$PWD/$dotfile" $HOME;
       ;;
   esac
 done
 
 # mm.cfg
-ln -nfs $PWD/mm.cfg $HOME/mm.cfg
+dotfile=mm.cfg
+echo "$0: symlink $HOME/$dotfile -> $PWD/$dotfile"
+ln -nfs $PWD/$dotfile $HOME
 
 git submodule update --init
+
+echo "$0: Complete!"
