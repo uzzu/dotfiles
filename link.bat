@@ -12,11 +12,11 @@ if "%HOME%" equ "" (
 for /F %%f in ('dir /B ".?*"') do (
   setlocal
   if "%%f" equ ".git" (
-    rem
+    rem;
   ) else if "%%f" equ ".gitignore" (
-    rem
+    rem;
   ) else if "%%f" equ ".gitmodules" (
-    rem
+    rem;
   ) else (
     echo %0: symlink %HOME%\%%f -^> %PWD%%%f
     if exist %PWD%%%f\ (
