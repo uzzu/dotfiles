@@ -76,6 +76,7 @@ alias lal="ls -laF"
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
+alias rake="noglob rake"
 
 # exec tmux
 if which tmux 2>&1 >/dev/null; then
