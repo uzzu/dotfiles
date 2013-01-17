@@ -19,6 +19,13 @@ for /F %%f in ('dir /B ".?*"') do (
     rem;
   ) else (
     echo %0: symlink %HOME%\%%f -^> %PWD%%%f
+    if exist %HOME%\%%f (
+      if exist %HOME%\%%f\ (
+        rmdir %HOME%\%%f
+      ) else (
+        del %HOME%\%%f
+      )
+    )
     if exist %PWD%%%f\ (
       mklink /d %HOME%\%%f "%PWD%%%f"
     ) else (
@@ -30,6 +37,9 @@ for /F %%f in ('dir /B ".?*"') do (
 rem mm.cfg
 set dotfile=mm.cfg
 echo %0: symlink %HOME%\%dotfile% -^> %PWD%%dotfile%
+if exist %HOME%\%dotfile% (
+  del %HOME%\%dotfile%
+)
 mklink %HOME%\%dotfile% "%PWD%%dotfile%"
 
 echo %0: Complete!
