@@ -81,6 +81,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias tmux="tmux -2"
 alias rake="noglob rake"
+alias nvm="nodebrew"
 
 # editor setting
 if [ -f /usr/bin/vim ]; then
@@ -124,9 +125,9 @@ if [ -d $HOME/.rbenv ]; then
   [ -f $HOME/.rbenv/completions/rbenv.zsh ] && source $HOME/.rbenv/completions/rbenv.zsh
 fi
 
-# for nvm
-if [ -f $HOME/.nvm/nvm.sh ]; then
-  source ~/.nvm/nvm.sh
+# for node.js (using nodebrew)
+if [ -d $HOME/.nodebrew/current/bin ]; then
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 
 # exec tmux
