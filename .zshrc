@@ -1,3 +1,6 @@
+# language setting
+export LANG=ja_JP.UTF-8
+
 # git prompt
 function rprompt-git-current-branch {
     local name st color
@@ -76,9 +79,52 @@ alias lal="ls -laF"
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
+alias tmux="tmux -2"
 alias rake="noglob rake"
+
+# editor setting
+if [ -f /usr/bin/vim ]; then
+  EDITOR=/usr/bin/vim
+  export EDITOR PATH
+fi
+
+# lua setting
+local lua_version=5.1.5
+if [ -f  /usr/local/bin/$lua_version/bin ]; then
+  export PATH=/usr/local/lib/lua/$lua_version/bin:$PATH
+fi
+
+# java setting
+local java_version=java-6-sun-1.6.0.26
+if [ -d /usr/lib/jvm/$java_version ]; then
+  export JAVA_HOME=/usr/lib/jvm/$java_version
+  export PATH=$JAVA_HOME/bin:$PATH
+fi
+
+# maven setting
+local m2_version=3.0.4
+if [ -d /usr/local/lib/maven/$m2_version ]; then
+  M2_HOME=/usr/local/lib/maven/$m2_version
+  M2=$M2_HOME/bin
+  export MAVEN_OPTS="-Xmx1024m"
+  export PATH=$M2:$PATH
+fi
+
+#for alchemy
+if [ -d /opt/alchemy/alchemy-setup ]; then
+  source /opt/alchemy/alchemy-setup
+fi
+
+# for ruby (using rbenv, and some rbenv plugins)
+export PATH=$HOME/.rbenv/bin:$PATH
+eval "$( rbenv init - zsh )"
+
+# for nvm
+if [ -f $HOME/.nvm/nvm.sh ]; then
+  source ~/.nvm/nvm.sh
+fi
 
 # exec tmux
 if which tmux 2>&1 >/dev/null; then
-  test -z "$TMUX" && (tmux attach || tmux -2 new-session)
+  test -z "$TMUX" && (tmux attach || tmux new-session)
 fi
