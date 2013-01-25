@@ -30,7 +30,7 @@ sudo apt-get install -y \
   wget\
   git git-core gitk tig\
   fluxbox tmux zsh vim\
-  chromium-browser\
+  chromium-browser gimp dia freemind\
   haskell-platform\
 
 # install rbenv
