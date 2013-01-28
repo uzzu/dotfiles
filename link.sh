@@ -27,4 +27,7 @@ ln -nfs $PWD/$dotfile $HOME
 # submodule update
 git submodule update --init
 
+# update neobundle
+vim -c "NeoBundleInstall! | q!"
+
 echo "$0: Complete!"
