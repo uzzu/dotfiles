@@ -10,7 +10,7 @@ function! ToggleGuiOptions(flag_option)
     else
       set guioptions+=T
     endif
-  elseif a:flag_option ==?
+  elseif a:flag_option ==? 'm'
     if &guioptions =~# 'm'
       set guioptions-=m
     else
