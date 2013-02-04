@@ -72,10 +72,19 @@ setopt auto_pushd
 setopt pushd_ignore_dups
 
 # alias settings
-alias ls="ls --color=auto"
-alias ll="ls -lF"
-alias la="ls -aF"
-alias lal="ls -laF"
+case "$OSTYPE" in
+  darwin*)
+    alias ll="ls -lF"
+    alias la="ls -aF"
+    alias lal="ls -laF"
+    ;;
+  linux*)
+    alias ls="ls --color=auto"
+    alias ll="ls -lF --color=auto"
+    alias la="ls -aF --color=auto"
+    alias lal="ls -laF --color=auto"
+    ;;
+esac
 alias cp="cp -i"
 alias mv="mv -i"
 alias rm="rm -i"
