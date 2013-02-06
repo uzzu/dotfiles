@@ -11,6 +11,8 @@ nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
+nmap <C-n> gt
+nmap <C-p> gT
 nmap ,s :%s/<C-v><C-m>//<CR>
 nmap ,,s :$s/\s*$//<CR>
 nmap <leader>i1 :set softtabstop=1<CR>:set shiftwidth=1
