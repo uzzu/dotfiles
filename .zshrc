@@ -56,6 +56,11 @@ setopt append_history
 setopt inc_append_history
 setopt hist_no_store
 setopt hist_ignore_space
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
 
 # correct settings
 setopt auto_cd
