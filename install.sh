@@ -34,33 +34,7 @@ sudo apt-get install -y \
   haskell-platform\
 
 # install rbenv
-if [ ! -d $HOME/.rbenv ]; then
-  git clone git://github.com/sstephenson/rbenv.git $HOME/.rbenv
-  mkdir -p $HOME/.rbenv/plugins
-  git clone git://github.com/sstephenson/ruby-build.git $HOME/.rbenv/plugins/ruby-build
-  git clone git://github.com/jamis/rbenv-gemset.git $HOME/.rbenv/plugins/rbenv-gemset
-  SHNAME=`basename $SHELL`
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init - $SHNAME)"
-  RUBY_VERSION=1.9.3-p194
-#  RUBY_VERSION=1.9.3-p374
-  CONFIGURE_OPTS=--enable-shared rbenv install $RUBY_VERSION
-  rbenv rehash; rehash;
-  rbenv global $RUBY_VERSION
-  rbenv exec gem install bundler
-
-#  SHNAME=`basename $SHELL`
-#  if [ $SHNAME = 'bash' ]; then
-#    CONF=$HOME/.bash_profile
-#    COMPLETION=$HOME/.rbenv/completions/rbenv.bash
-#  elif [ $SHNAME = 'zsh' ]; then
-#    CONF=$HOME/.zshenv
-#    COMPLETION=$HOME/.rbenv/completions/rbenv.zsh
-#  fi
-#  echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> $CONF
-#  echo 'eval "$(rbenv init - )"' >> $CONF
-#  echo 'source $COMPLETION' >> $CONF
-fi
+sh `dirname $0`/install-rbenv.sh
 
 # install nodebrew
 if [ ! -d $HOME/.nodebrew ]; then
