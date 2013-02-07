@@ -36,6 +36,9 @@ sudo apt-get install -y \
 # install rbenv
 sh `dirname $0`/install-rbenv.sh
 
+# install pyenv
+sh `dirname $0`/install-pyenv.sh
+
 # install nodebrew
 if [ ! -d $HOME/.nodebrew ]; then
   curl https://raw.github.com/hokaccha/nodebrew/master/nodebrew | perl - setup

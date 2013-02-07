@@ -139,6 +139,14 @@ if [ -d $HOME/.rbenv ]; then
   [ -f $HOME/.rbenv/completions/rbenv.zsh ] && source $HOME/.rbenv/completions/rbenv.zsh
 fi
 
+# for python (using pyenv, and python-virtualenv)
+if [ -d $HOME/.pyenv ]; then
+  if [ -d $HOME/.pyenv/bin ]; then
+    export PATH=$HOME/.pyenv/bin:$PATH
+  fi
+  eval "$(pyenv init -)"
+fi
+
 # for node.js (using nodebrew)
 if [ -d $HOME/.nodebrew/current/bin ]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
