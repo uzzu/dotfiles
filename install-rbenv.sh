@@ -5,6 +5,7 @@ echo $0: Running.
 #sudo apt-get install -y \
 #  build-essential\
 #  autoconf2.64 \
+#  git git-core\
 #  wget\
 #  libncurses5-dev\
 #  libgdbm-dev\
@@ -20,6 +21,7 @@ echo $0: Running.
 # prepare for mac
 # curl -o ~/Downloads/GCC-10.7-v2.pkg https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.7-v2.pkg
 # installer -pkg ~/Downloads/GCC-10.7-v2.pkg
+#brew install git
 #brew install openssl
 #brew link openssl
 #brew install readline
