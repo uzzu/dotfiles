@@ -133,6 +133,13 @@ if [ -d /opt/alchemy/alchemy-setup ]; then
   source /opt/alchemy/alchemy-setup
 fi
 
+# for haskell
+if [ -d $HOME/.cabal ]; then
+  if [ -d $HOME/.cabal/bin ]; then
+    export PATH=$HOME/.cabal/bin:$PATH
+  fi
+fi
+
 # for ruby (using rbenv, and some rbenv plugins)
 if [ -d $HOME/.rbenv ]; then
   if [ -d $HOME/.rbenv/bin ]; then
