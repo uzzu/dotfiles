@@ -19,7 +19,7 @@
 	mnff = merge --no-ff
 	undo = reset --soft HEAD^
 	visual = "!gitk"
-	staging = diff --cache
+	staging = diff --cached
 	di = diff HEAD~
 	dii = diff HEAD~~
 	diii = diff HEAD~~~
