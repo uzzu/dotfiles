@@ -6,12 +6,13 @@ syntax on
 set title
 set number
 set ruler
-set nowrap
+set wrap
 set showcmd
 set showmatch
 set scrolloff=10
 set wildmenu
-set statusline=%<%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v\ %l/%L
+set laststatus=2
+set statusline=%<%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v(0x%04.4B)\ %l/%L(%P)
 set list
 set listchars=tab:>-,extends:<,trail:- ",eol:<
 highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
