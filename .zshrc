@@ -162,7 +162,13 @@ if [ -d $HOME/.nodebrew/current/bin ]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 
-# exec tmux
-if which tmux 2>&1 >/dev/null; then
-  test -z "$TMUX" && (tmux attach || tmux new-session)
-fi
+# use tmux except mac
+case "$OSTYPE" in
+  darwin*)
+    ;;
+  linux*)
+    if which tmux 2>&1 >/dev/null; then
+      test -z "$TMUX" && (tmux attach || tmux new-session)
+    fi
+    ;;
+esac
