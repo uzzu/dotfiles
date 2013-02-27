@@ -79,9 +79,10 @@ setopt pushd_ignore_dups
 # alias settings
 case "$OSTYPE" in
   darwin*)
-    alias ll="ls -lF"
-    alias la="ls -aF"
-    alias lal="ls -laF"
+    alias ls="ls -G"
+    alias ll="ls -lFG"
+    alias la="ls -aFG"
+    alias lal="ls -laFG"
     ;;
   linux*)
     alias ls="ls --color=auto"
