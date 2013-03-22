@@ -129,6 +129,16 @@ if [ -d /usr/local/lib/maven/$m2_version ]; then
   export PATH=$M2:$PATH
 fi
 
+# android setting
+case "$OSTYPE" in
+  darwin*)
+    export ANDROID_SDK_HOME=/Applications/adt/sdk
+    export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
+    ;;
+  linux*)
+    ;;
+esac
+
 #for alchemy
 if [ -d /opt/alchemy/alchemy-setup ]; then
   source /opt/alchemy/alchemy-setup
