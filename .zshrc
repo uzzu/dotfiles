@@ -114,11 +114,24 @@ if [ -f  /usr/local/bin/$lua_version/bin ]; then
 fi
 
 # java setting
-local java_version=java-6-sun-1.6.0.26
-if [ -d /usr/lib/jvm/$java_version ]; then
-  export JAVA_HOME=/usr/lib/jvm/$java_version
-  export PATH=$JAVA_HOME/bin:$PATH
-fi
+case "$OSTYPE" in
+  darwin*)
+    local java_version=1.6.0_29-b11-402.jdk
+    if [ -d /Library/Java/JavaVirtualMachines ]; then
+      if [ -d /Library/Java/JavaVirtualMachines/$java_version ]; then
+        export JAVA_HOME=/Library/Java/JavaVirtualMachines/$java_version/Contents/Home
+        export PATH=$JAVA_HOME/bin:$PATH
+      fi
+    fi
+    ;;
+  linux*)
+    local java_version=java-6-sun-1.6.0.26
+    if [ -d /usr/lib/jvm/$java_version ]; then
+      export JAVA_HOME=/usr/lib/jvm/$java_version
+      export PATH=$JAVA_HOME/bin:$PATH
+    fi
+    ;;
+esac
 
 # maven setting
 local m2_version=3.0.4
