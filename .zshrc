@@ -134,7 +134,7 @@ case "$OSTYPE" in
 esac
 
 # maven setting
-local m2_version=3.0.4
+local m2_version=3.0.5
 if [ -d /usr/local/lib/maven/$m2_version ]; then
   M2_HOME=/usr/local/lib/maven/$m2_version
   M2=$M2_HOME/bin
