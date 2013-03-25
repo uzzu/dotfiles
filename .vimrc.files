@@ -12,7 +12,7 @@ set termencoding=utf-8
 set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp
 set enc=utf-8
 set ff=unix
-au BufNewFile *.{rb,py,php,lua,nut,js*,as,txt,css,htm*}{,.in} set fileencoding=utf-8
+au BufNewFile * set fileencoding=utf-8
 
 " File type
 
