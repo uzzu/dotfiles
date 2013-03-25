@@ -152,6 +152,17 @@ case "$OSTYPE" in
     ;;
 esac
 
+# for flashplayerdebugger
+case "$OSTYPE" in
+  darwin*)
+    if [ -d /Applications/Flash\ Player\ Debugger.app ]; then
+      export PATH=/Applications/Flash\ Player\ Debugger.app/Contents/MacOS:$PATH
+    fi
+    ;;
+  linux*)
+    ;;
+esac
+
 #for alchemy
 if [ -d /opt/alchemy/alchemy-setup ]; then
   source /opt/alchemy/alchemy-setup
