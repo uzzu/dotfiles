@@ -19,7 +19,7 @@ echo $0: Running.
 #  libffi-dev\
 
 # prepare for mac
-# curl -o ~/Downloads/GCC-10.7-v2.pkg https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.7-v2.pkg
+# curl -O ~/Downloads/GCC-10.7-v2.pkg https://github.com/downloads/kennethreitz/osx-gcc-installer/GCC-10.7-v2.pkg
 # installer -pkg ~/Downloads/GCC-10.7-v2.pkg
 #brew install git
 #brew install openssl
