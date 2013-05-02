@@ -23,9 +23,7 @@ echo $0: Running.
 # installer -pkg ~/Downloads/GCC-10.7-v2.pkg
 #brew install git
 #brew install openssl
-#brew link openssl
 #brew install readline
-#brew link readline
 #brew install libyaml
 #brew install autoconf
 
