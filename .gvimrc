@@ -34,7 +34,7 @@ function! ToggleGuiOptions(flag_option)
 endfunction
 
 "color setting
-colorscheme Monokai
+colorscheme molokai
 
 "view setting
 set guioptions=
