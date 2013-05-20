@@ -32,19 +32,18 @@ function! ToggleGuiOptions(flag_option)
     echo 'bad parameter :' . a:flag_option
   endif
 endfunction
-
-"color setting
-colorscheme molokai
-
-"view setting
-set guioptions=
-set guifont=DejaVu_Sans_Mono:h11:w6.5:cSHIFTJIS
-set lines=62 columns=140
-
-gui
-set transparency=255
-
 nnoremap ,t :call ToggleGuiOptions('T')<CR>
 nnoremap ,m :call ToggleGuiOptions('m')<CR>
 nnoremap ,r :call ToggleGuiOptions('r')<CR>
 nnoremap ,l :call ToggleGuiOptions('l')<CR>
+
+" view setting
+if has('win32')
+  gui
+  set transparency=255
+  set guioptions=
+endif
+colorscheme molokai
+set guifont=DejaVu_Sans_Mono:h11:w6.5:cSHIFTJIS
+set lines=62 columns=140
+
