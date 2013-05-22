@@ -14,7 +14,9 @@
 	co = checkout
 	ci = commit
 	cm = commit -m
-	ca = commit -am
+	cv = commit -v
+	cam = commit -am
+	cav = commit -av
 	st = status -sb
 	sti = status -sb --ignored
 	br = branch
