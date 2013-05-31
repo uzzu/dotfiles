@@ -54,6 +54,14 @@ NeoBundle "cakebaker/scss-syntax.vim"
 NeoBundle "taichouchou2/html5.vim"
 NeoBundle "taichouchou2/vim-javascript"
 NeoBundle "jQuery"
+NeoBundleLazy "nosami/Omnisharp", {
+  \   "autoload": {"filetypes": ["cs"]},
+  \   "build": {
+  \     "windows": "MSBuild.exe server/OmniSharp.sln /p:Platform='Any CPU'",
+  \     "mac": "xbuild server/OmniSharp.sln",
+  \     "unix": "xbuild server/OmniSharp.sln",
+  \   }
+  \ }
 
 filetype plugin indent on
 
