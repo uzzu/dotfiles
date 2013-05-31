@@ -20,6 +20,7 @@
 	st = status -sb
 	sti = status -sb --ignored
 	br = branch
+	bra = branch -a
 	pr = pull --rebase
 	mnff = merge --no-ff
 	undo = reset --soft HEAD^
