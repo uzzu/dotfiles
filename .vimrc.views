@@ -12,7 +12,7 @@ set showmatch
 set scrolloff=10
 set wildmenu
 set laststatus=2
-set statusline=%<%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%4v(0x%04.4B)\ %l/%L(%P)
+set statusline=%<%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']['.&ff.']'}%=%4v(0x%04.4B)\ %l/%L(%P)
 set list
 set listchars=tab:>-,extends:<,trail:- ",eol:<
 highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
