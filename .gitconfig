@@ -12,6 +12,7 @@
 [alias]
 	tr = log --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
 	co = checkout
+	cob = checkout -b
 	ci = commit
 	cm = commit -m
 	cv = commit -v
@@ -21,6 +22,8 @@
 	sti = status -sb --ignored
 	br = branch
 	bra = branch -a
+	brd = branch -d
+	brdd = branch -D
 	pr = pull --rebase
 	mnff = merge --no-ff
 	undo = reset --soft HEAD^
