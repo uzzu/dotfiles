@@ -51,9 +51,9 @@
     pr      = pull      --rebase
     st      = status    -sb
     sti     = status    -sb --ignored
-    tr      = log                               --graph --date=local --pretty='tricolor'
-    trs     = log               --name-status   --graph --date=local --pretty='tricolor'
-    tra     = log       --all                   --graph --date=local --pretty='tricolor'
-    tras    = log       --all   --name-status   --graph --date=local --pretty='tricolor'
+    tr      = log       --graph --date=local --pretty='tricolor'
+    tra     = !git tr   --all
+    trs     = !git tr           --stat
+    tras    = !git tr   --all   --stat
     undo    = reset     --soft HEAD^
 
