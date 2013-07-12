@@ -28,7 +28,6 @@
     pr      = pull      --rebase
     mnff    = merge     --no-ff
     undo    = reset     --soft HEAD^
-    visual  = "!gitk"
     dd      = diff
     ds      = diff      --cached
     di      = diff      HEAD~
