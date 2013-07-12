@@ -1,38 +1,38 @@
 [user]
-	name = uzzu
-	email = himeatball@gmail.com
+    name = uzzu
+    email = himeatball@gmail.com
 [github]
-	user = uzzu
+    user = uzzu
 [core]
-	editor = vim
+    editor = vim
 [merge]
-	tool = vimdiff
+    tool = vimdiff
 [color]
-	ui = true
+    ui = true
 [alias]
-	tr = log --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
-	co = checkout
-	cob = checkout -b
-	ci = commit
-	cm = commit -m
-	cv = commit -v
-	cam = commit -am
-	cav = commit -av
-	st = status -sb
-	sti = status -sb --ignored
-	br = branch
-	bra = branch -a
-	brd = branch -d
-	brdd = branch -D
-	pr = pull --rebase
-	mnff = merge --no-ff
-	undo = reset --soft HEAD^
-	visual = "!gitk"
-	dd = diff
-	ds = diff --cached
-	di = diff HEAD~
-	dii = diff HEAD~~
-	diii = diff HEAD~~~
-	diiii = diff HEAD~~~~
-	diiiii = diff HEAD~~~~~
+    tr      = log               --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
+    co      = checkout
+    cob     = checkout  -b
+    ci      = commit
+    cm      = commit    -m
+    cv      = commit    -v
+    cam     = commit    -am
+    cav     = commit    -av
+    st      = status    -sb
+    sti     = status    -sb --ignored
+    br      = branch
+    bra     = branch    -a
+    brd     = branch    -d
+    brdd    = branch    -D
+    pr      = pull      --rebase
+    mnff    = merge     --no-ff
+    undo    = reset     --soft HEAD^
+    visual  = "!gitk"
+    dd      = diff
+    ds      = diff      --cached
+    di      = diff      HEAD~
+    dii     = diff      HEAD~~
+    diii    = diff      HEAD~~~
+    diiii   = diff      HEAD~~~~
+    diiiii  = diff      HEAD~~~~~
 
