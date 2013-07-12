@@ -9,6 +9,22 @@
     tool = vimdiff
 [color]
     ui = true
+[color "branch"]
+    current = green black
+    local   = green
+    remote  = magenta
+[pretty]
+    simplelog = %C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset
+    tricolor = %C(green reverse)%h%Creset%C(blue reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    russia = %C(white reverse)%h%Creset%C(blue reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    italy = %C(green reverse)%h%Creset%C(white reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    france = %C(blue reverse)%h%Creset%C(white reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    afghan = %C(black reverse)%h%Creset%C(red reverse)%an%Creset%C(green reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    india = %C(yellow reverse)%h%Creset%C(white reverse)%an%Creset%C(green reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    myanmar = %C(yellow reverse)%h%Creset%C(green reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    mongolia = %C(red reverse)%h%Creset%C(blue reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    yemen = %C(red reverse)%h%Creset%C(white reverse)%an%Creset%C(black reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
+    sgi = %C(blue reverse)%h%Creset%C(yellow reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(blue)(%cd)%Creset
 [alias]
     br      = branch
     bra     = branch    -a
@@ -35,7 +51,9 @@
     pr      = pull      --rebase
     st      = status    -sb
     sti     = status    -sb --ignored
-    tr      = log               --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
-    tra     = log       --all   --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
+    tr      = log                               --graph --date=local --pretty='tricolor'
+    trs     = log               --name-status   --graph --date=local --pretty='tricolor'
+    tra     = log       --all                   --graph --date=local --pretty='tricolor'
+    tras    = log       --all   --name-status   --graph --date=local --pretty='tricolor'
     undo    = reset     --soft HEAD^
 
