@@ -10,8 +10,10 @@
 [color]
     ui = true
 [alias]
-    tr      = log               --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
-    tra     = log       --all   --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
+    br      = branch
+    bra     = branch    -a
+    brd     = branch    -d
+    brdd    = branch    -D
     co      = checkout
     cob     = checkout  -b
     ci      = commit
@@ -19,15 +21,6 @@
     cv      = commit    -v
     cam     = commit    -am
     cav     = commit    -av
-    st      = status    -sb
-    sti     = status    -sb --ignored
-    br      = branch
-    bra     = branch    -a
-    brd     = branch    -d
-    brdd    = branch    -D
-    pr      = pull      --rebase
-    mnff    = merge     --no-ff
-    undo    = reset     --soft HEAD^
     dd      = diff
     ds      = diff      --cached
     di      = diff      HEAD~
@@ -35,4 +28,14 @@
     diii    = diff      HEAD~~~
     diiii   = diff      HEAD~~~~
     diiiii  = diff      HEAD~~~~~
+    fe      = fetch
+    fep     = fetch     --prune
+    info    = remote    show origin
+    mnff    = merge     --no-ff
+    pr      = pull      --rebase
+    st      = status    -sb
+    sti     = status    -sb --ignored
+    tr      = log               --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
+    tra     = log       --all   --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
+    undo    = reset     --soft HEAD^
 
