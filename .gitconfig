@@ -11,6 +11,7 @@
     ui = true
 [alias]
     tr      = log               --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
+    tra     = log       --all   --graph --date=local --pretty='format:%C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset'
     co      = checkout
     cob     = checkout  -b
     ci      = commit
