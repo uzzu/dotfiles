@@ -49,8 +49,9 @@
     info    = remote    show origin
     mnff    = merge     --no-ff
     pr      = pull      --rebase
-    st      = status    -sb
-    sti     = status    -sb --ignored
+    st      = status    --short --branch
+    stu     = status    --short --branch    --untracked-files=no
+    sti     = status    --short --branch    --ignored
     tr      = log       --graph --date=local --pretty='tricolor'
     tra     = !git tr   --all
     trs     = !git tr           --stat
