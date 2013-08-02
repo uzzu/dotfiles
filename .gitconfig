@@ -49,12 +49,13 @@
     info    = remote    show origin
     mnff    = merge     --no-ff
     pr      = pull      --rebase
+    rmd     = !git      status | grep deleted: | awk '{print $3}' | xargs git rm
     st      = status    --short --branch
     stu     = status    --short --branch    --untracked-files=no
     sti     = status    --short --branch    --ignored
     tr      = log       --graph --date=local --pretty='tricolor'
-    tra     = !git tr   --all
-    trs     = !git tr           --stat
-    tras    = !git tr   --all   --stat
+    tra     = !git      tr      --all
+    trs     = !git      tr      --stat
+    tras    = !git      tr      --all   --stat
     undo    = reset     --soft HEAD^
 
