@@ -30,6 +30,7 @@
     bra     = branch    -a
     brd     = branch    -d
     brdd    = branch    -D
+    brm     = branch    -m
     co      = checkout
     cob     = checkout  -b
     ci      = commit
@@ -53,7 +54,7 @@
     st      = status    --short --branch
     stu     = status    --short --branch    --untracked-files=no
     sti     = status    --short --branch    --ignored
-    tr      = log       --graph --date=local --pretty='tricolor'
+    tr      = log       --graph --date=local --pretty='italy'
     tra     = !git      tr      --all
     trs     = !git      tr      --stat
     tras    = !git      tr      --all   --stat
