@@ -48,6 +48,10 @@
     fe      = fetch
     fep     = fetch     --prune
     info    = remote    show origin
+    kk      = !gitk
+    kka     = !gitk     -all
+    kt      = !tig
+    kta     = !tig      -all
     mnff    = merge     --no-ff
     pr      = pull      --rebase
     rmd     = !git      status | grep deleted: | awk '{print $3}' | xargs git rm
