@@ -33,6 +33,7 @@
     brm     = branch    -m
     co      = checkout
     cob     = checkout  -b
+    conf    = !vim      ~/.gitconfig
     ci      = commit
     cm      = commit    -m
     cv      = commit    -v
