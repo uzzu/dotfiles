@@ -26,6 +26,7 @@
     yemen = %C(red reverse)%h%Creset%C(white reverse)%an%Creset%C(black reverse)%d%Creset %C(white bold)%s%Creset %C(magenta)(%cd)%Creset
     sgi = %C(blue reverse)%h%Creset%C(yellow reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(magenta)(%cd)%Creset
 [alias]
+    adm     = !git      status | grep modified: | awk '{print $3}' | xargs git add
     br      = branch
     bra     = branch    -a
     brd     = branch    -d
