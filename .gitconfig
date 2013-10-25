@@ -36,8 +36,8 @@
     cob     = checkout  -b
     conf    = !vim      ~/.gitconfig
     ci      = commit
-    cia     = commit    --amend
     cm      = commit    -m
+    cmm     = commit    --amend     -m
     cv      = commit    -v
     cam     = commit    -am
     cav     = commit    -av
