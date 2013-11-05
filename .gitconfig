@@ -32,6 +32,7 @@
     brd     = branch    -d
     brdd    = branch    -D
     brm     = branch    -m
+    web     = "!git      config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/g'" | xargs open
     co      = checkout
     cob     = checkout  -b
     conf    = !vim      ~/.gitconfig
