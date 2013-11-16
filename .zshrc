@@ -107,6 +107,9 @@ fi
 # for homebrew's bug
 export PATH=/usr/local/bin:$PATH
 
+# user home path
+export PATH=~/bin:$PATH
+
 # lua setting
 local lua_version=5.1.5
 if [ -f  /usr/local/bin/$lua_version/bin ]; then
