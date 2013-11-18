@@ -36,12 +36,10 @@ sudo apt-get install -y \
 # install rbenv
 sh `dirname $0`/install-rbenv.sh
 
-# install pyenv
-sh `dirname $0`/install-pyenv.sh
-
 # install nodebrew
 sh `dirname $0`/install-nodebrew.sh
 
+# link
 sh `dirname $0`/link.sh
 
 echo $0: Complete!
