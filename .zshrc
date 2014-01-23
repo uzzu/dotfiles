@@ -26,6 +26,11 @@ function rprompt-git-current-branch {
     echo "%{$color%}$name%{$reset_color%} "
 }
 
+# cd git root
+function gitt() {
+  cd `git rev-parse --show-toplevel`
+}
+
 
 # keybind settings
 bindkey -v
