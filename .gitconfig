@@ -41,6 +41,7 @@
     cv      = commit        -v
     cam     = commit        -am
     cav     = commit        -av
+    dh      = show          HEAD
     dd      = diff
     ds      = diff          --cached
     di      = diff          HEAD~
@@ -65,7 +66,7 @@
     tr      = log           --graph --date=local    --pretty='italy'
     tra     = !git          tr      --all
     trs     = !git          tr      --stat
-    tras    = !git          tr      --all   --stat
+    tras    = !git          tr      --all           --stat
     undo    = reset         --soft HEAD^
     w       = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | xargs open
     wp      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3\\/pulls/' | xargs open
