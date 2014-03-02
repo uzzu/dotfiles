@@ -26,7 +26,7 @@
     yemen = %C(red reverse)%h%Creset%C(white reverse)%an%Creset%C(black reverse)%d%Creset %C(white bold)%s%Creset %C(magenta)(%cd)%Creset
     sgi = %C(blue reverse)%h%Creset%C(yellow reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(magenta)(%cd)%Creset
 [alias]
-    adm     = !git          status | grep modified: | awk '{print $3}' | xargs git add
+    adm     = !git          status | grep modified: | awk '{print $2}' | xargs git add
     br      = branch
     bra     = branch        -a
     brd     = branch        -d
@@ -58,7 +58,7 @@
     kta     = !tig          --all
     mnff    = merge         --no-ff
     pr      = pull          --rebase
-    rmd     = !git          status | grep deleted: | awk '{print $3}' | xargs git rm
+    rmd     = !git          status | grep deleted: | awk '{print $2}' | xargs git rm
     st      = status        --short --branch
     stu     = status        --short --branch        --untracked-files=no
     sti     = status        --short --branch        --ignored
