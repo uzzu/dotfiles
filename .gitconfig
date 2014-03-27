@@ -68,8 +68,8 @@
     trs     = !git          tr      --stat
     tras    = !git          tr      --all           --stat
     undo    = reset         --soft HEAD^
-    w       = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | xargs open
-    wp      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3\\/pulls/' | xargs open
-    wi      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3\\/issues/' | xargs open
-    ww      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3\\/wiki/' | xargs open
+    w       = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git/\\1\\/\\2/'           | xargs open
+    wp      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git/\\1\\/\\2\\/pulls/'   | xargs open
+    wi      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git/\\1\\/\\2\\/issues/'  | xargs open
+    ww      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git/\\1\\/\\2\\/wiki/'    | xargs open
 
