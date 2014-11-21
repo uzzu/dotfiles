@@ -25,6 +25,7 @@ au BufNewFile,BufReadPost *.sass    set filetype=sass
 au BufNewFile,BufReadPost *.scss    set filetype=scss
 au BufNewFile,BufReadPost *.coffee  set filetype=coffee
 au BufNewFile,BufReadPost *.ts      set filetype=typescript
+au BufNewFile,BufReadPost *.jad     set filetype=java
 
 " File indent
 " sw:   shiftwidth
