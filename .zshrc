@@ -199,6 +199,10 @@ if [ -d $HOME/.pyenv ]; then
     export PATH=$HOME/.pyenv/bin:$PATH
   fi
   eval "$(pyenv init -)"
+elif [ -d /usr/local/share ]; then
+  if [ -d /usr/local/share/python ]; then
+    export PATH=/usr/local/share/python:$PATH
+  fi
 fi
 
 # for node.js (using nodebrew)
