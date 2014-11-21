@@ -5,6 +5,7 @@
     user = uzzu
 [core]
     editor = vim
+    excludesfile = /Users/uzu-h/.gitignore_global
 [merge]
     tool = vimdiff
 [color]
@@ -25,6 +26,12 @@
     mongolia = %C(red reverse)%h%Creset%C(blue reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(magenta)(%cd)%Creset
     yemen = %C(red reverse)%h%Creset%C(white reverse)%an%Creset%C(black reverse)%d%Creset %C(white bold)%s%Creset %C(magenta)(%cd)%Creset
     sgi = %C(blue reverse)%h%Creset%C(yellow reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(magenta)(%cd)%Creset
+[difftool "sourcetree"]
+    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+    path = 
+[mergetool "sourcetree"]
+    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+    trustExitCode = true
 [alias]
     adm     = !git          status | grep modified: | awk '{print $2}' | xargs git add
     br      = branch
