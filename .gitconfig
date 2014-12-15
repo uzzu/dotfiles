@@ -33,7 +33,7 @@
     cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
     trustExitCode = true
 [alias]
-    adm     = !git          status | grep modified: | awk '{print $2}' | xargs git add
+    adm     = !git          ls-files --modified | xargs git add
     br      = branch
     bra     = branch        -a
     brd     = branch        -d
@@ -66,7 +66,7 @@
     kta     = !tig          --all
     mnff    = merge         --no-ff
     pr      = pull          --rebase
-    rmd     = !git          status | grep deleted: | awk '{print $2}' | xargs git rm
+    rmd     = !git          ls-files --deleted | xargs git rm
     st      = status        --short --branch
     stu     = status        --short --branch        --untracked-files=no
     sti     = status        --short --branch        --ignored
