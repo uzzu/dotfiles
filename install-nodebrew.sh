@@ -2,9 +2,9 @@
 echo $0: Running.
 
 if [ ! -d $HOME/.nodebrew ]; then
-  curl https://raw.github.com/hokaccha/nodebrew/master/nodebrew | perl - setup
+  curl -L git.io/nodebrew | perl - setup
   export PATH=$HOME/.nodebrew/current/bin:$PATH
-  NODE_VERSION=v0.8.17
+  NODE_VERSION=v0.12.0
   nodebrew install $NODE_VERSION
   nodebrew alias default $NODE_VERSION
   nodebrew use $NODE_VERSION
