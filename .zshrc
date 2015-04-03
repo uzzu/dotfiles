@@ -154,6 +154,7 @@ fi
 case "$OSTYPE" in
   darwin*)
     export ANDROID_SDK_HOME=/Applications/adt/sdk
+    export ANDROID_HOME=$ANDROID_SDK_HOME
     export PATH=$ANDROID_SDK_HOME/tools:$PATH
     export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
     ;;
