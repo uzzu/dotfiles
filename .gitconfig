@@ -41,6 +41,7 @@
     brm     = branch        -m
     co      = checkout
     cob     = checkout      -b
+    cobr    = "!f() { if [ $# -ne 1 ]; then echo \"Usage: git cobr {branchname}\"; exit; fi; git cob ${1} remotes/origin/${1}; };f"
     conf    = !vim          ~/.gitconfig
     ci      = commit
     cm      = commit        -m
