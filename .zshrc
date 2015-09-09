@@ -124,13 +124,8 @@ fi
 # java setting
 case "$OSTYPE" in
   darwin*)
-    local java_version=1.6.0_29-b11-402.jdk
-    if [ -d /Library/Java/JavaVirtualMachines ]; then
-      if [ -d /Library/Java/JavaVirtualMachines/$java_version ]; then
-        export JAVA_HOME=/Library/Java/JavaVirtualMachines/$java_version/Contents/Home
-        export PATH=$JAVA_HOME/bin:$PATH
-      fi
-    fi
+    export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+    export PATH=$JAVA_HOME/bin:$PATH
     ;;
   linux*)
     local java_version=java-6-sun-1.6.0.26
