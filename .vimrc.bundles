@@ -52,9 +52,10 @@ NeoBundle "hail2u/vim-css3-syntax"
 NeoBundle "colorizer"
 NeoBundle "cakebaker/scss-syntax.vim"
 NeoBundle "taichouchou2/html5.vim"
-NeoBundle "taichouchou2/vim-javascript"
+NeoBundle "pangloss/vim-javascript"
 NeoBundle "jQuery"
 NeoBundle "aklt/plantuml-syntax"
+NeoBundle "fatih/vim-go"
 NeoBundleLazy "nosami/Omnisharp", {
   \   "autoload": {"filetypes": ["cs"]},
   \   "build": {

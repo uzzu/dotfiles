@@ -61,3 +61,8 @@ if !exists("g:neocomplcache_force_omni_patterns")
   let g:neocomplcache_force_omni_patterns = {}
 endif
 let g:neocomplcache_force_omni_patterns.cs = "[^.]\.\%(\u\{2,}\)\?"
+
+" go code
+set runtimepath+=$GOROOT/misc/vim
+exe "set runtimepath+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")
+

@@ -211,6 +211,10 @@ if [ -d $HOME/.nodebrew/current/bin ]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 
+# for golang
+export GOPATH=$HOME/.go
+export PATH=$GOPATH/bin:$PATH
+
 # use tmux except mac
 case "$OSTYPE" in
   darwin*)
