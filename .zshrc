@@ -31,6 +31,24 @@ function gitt() {
   cd `git rev-parse --show-toplevel`
 }
 
+function diffjar() {
+  echo "diff "$2/$1" "$3/$1
+  mkdir ./a
+  mkdir ./b
+  cp $2/$1 ./a
+  cp $3/$1 ./b
+  cd ./a
+  jar xvf $1 > /dev/null
+  rm $1
+  cd ../
+  cd ./b
+  jar xvf $1 > /dev/null
+  rm $1
+  cd ../
+  diff -r ./a ./b
+  rm -rf ./a
+  rm -rf ./b
+}
 
 # keybind settings
 bindkey -v
@@ -220,3 +238,4 @@ case "$OSTYPE" in
     fi
     ;;
 esac
+
