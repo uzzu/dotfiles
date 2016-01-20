@@ -154,13 +154,10 @@ case "$OSTYPE" in
     ;;
 esac
 
-# maven setting
-local m2_version=3.0.5
-if [ -d /usr/local/lib/maven/$m2_version ]; then
-  M2_HOME=/usr/local/lib/maven/$m2_version
-  M2=$M2_HOME/bin
-  export MAVEN_OPTS="-Xmx1024m"
-  export PATH=$M2:$PATH
+# sdkman(gradle, maven) setting
+if [ -d /Users/uzu-h/.sdkman/bin ]; then
+  export SDKMAN_DIR=$HOME/.sdkman
+  [[ -s $SDKMAN_DIR/bin/sdkman-init.sh ]] && source $SDKMAN_DIR/bin/sdkman-init.sh
 fi
 
 # android setting
