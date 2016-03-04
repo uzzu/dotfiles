@@ -112,6 +112,7 @@ case "$OSTYPE" in
     alias ll="ls -lF --color=auto"
     alias la="ls -aF --color=auto"
     alias lal="ls -laF --color=auto"
+    alias open="gnome-open"
     ;;
 esac
 alias cp="cp -i"
