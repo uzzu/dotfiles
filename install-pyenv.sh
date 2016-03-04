@@ -25,6 +25,7 @@ if [ ! -d $HOME/.pyenv ]; then
   pyenv install $PYTHON_VERSION
   pyenv rehash
   pyenv global $PYTHON_VERSION
+  pip install --upgrade pip virtualenv setuptools
 fi
 
 echo $0: Complete!
