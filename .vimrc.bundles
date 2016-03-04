@@ -23,7 +23,7 @@ NeoBundle "Shougo/vimproc", {
 NeoBundle "sudo.vim"
 NeoBundle "tpope/vim-surround"
 NeoBundle "Shougo/neocomplcache"
-NeoBundle "mattn/zencoding-vim"
+NeoBundle "mattn/emmet-vim"
 NeoBundle "Shougo/vimshell"
 
 " colorscheme
