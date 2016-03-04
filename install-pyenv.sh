@@ -20,11 +20,11 @@ if [ ! -d $HOME/.pyenv ]; then
   SHNAME=`basename $SHELL`
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init - $SHNAME)"
+  eval "$(pyenv virtualenv-init - $SHNAME)"
   PYTHON_VERSION=3.5.0
   pyenv install $PYTHON_VERSION
   pyenv rehash
   pyenv global $PYTHON_VERSION
-  eval "$(pyenv virtualenv-init - $SHNAME)"
 fi
 
 echo $0: Complete!
