@@ -16,14 +16,15 @@ echo $0: Running.
 if [ ! -d $HOME/.pyenv ]; then
   git clone git://github.com/yyuu/pyenv.git $HOME/.pyenv
   mkdir -p $HOME/.pyenv/plugins
-  git clone git://github.com/yyuu/python-virtualenv.git $HOME/.pyenv/plugins/python-virtualenv
+  git clone git://github.com/yyuu/pyenv-virtualenv.git $HOME/.pyenv/plugins/pyenv-virtualenv
   SHNAME=`basename $SHELL`
   export PATH="$HOME/.pyenv/bin:$PATH"
   eval "$(pyenv init - $SHNAME)"
-  PYTHON_VERSION=2.7.3
+  PYTHON_VERSION=3.5.0
   pyenv install $PYTHON_VERSION
   pyenv rehash
   pyenv global $PYTHON_VERSION
+  eval "$(pyenv virtualenv-init - $SHNAME)"
 fi
 
 echo $0: Complete!

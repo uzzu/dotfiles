@@ -217,10 +217,11 @@ fi
 
 # for python (using pyenv, and python-virtualenv)
 if [ -d $HOME/.pyenv ]; then
-  if [ -d $HOME/.pyenv/bin ]; then
+  if [ -d $$HOME/.pyenv/bin ]; then
     export PATH=$HOME/.pyenv/bin:$PATH
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
   fi
-  eval "$(pyenv init -)"
 elif [ -d /usr/local/share ]; then
   if [ -d /usr/local/share/python ]; then
     export PATH=/usr/local/share/python:$PATH
