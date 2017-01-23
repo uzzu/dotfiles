@@ -56,6 +56,7 @@ NeoBundle "othree/yajs.vim"
 NeoBundle "jQuery"
 NeoBundle "aklt/plantuml-syntax"
 NeoBundle "fatih/vim-go"
+NeoBundle "solarnz/thrift.vim"
 NeoBundleLazy "nosami/Omnisharp", {
   \   "autoload": {"filetypes": ["cs"]},
   \   "build": {
