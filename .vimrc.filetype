@@ -1,0 +1,11 @@
+autocmd BufNewFile,BufReadPost *.as      set filetype=actionscript
+autocmd BufNewFile,BufReadPost *.mxml    set filetype=mxml
+autocmd BufNewFile,BufReadPost *.jsfl    set filetype=javascript
+autocmd BufNewFile,BufReadPost *.json    set filetype=json
+autocmd BufNewFile,BufReadPost *.less    set filetype=less
+autocmd BufNewFile,BufReadPost *.sass    set filetype=sass
+autocmd BufNewFile,BufReadPost *.scss    set filetype=scss
+autocmd BufNewFile,BufReadPost *.coffee  set filetype=coffee
+autocmd BufNewFile,BufReadPost *.ts      set filetype=typescript
+autocmd BufNewFile,BufReadPost *.jad     set filetype=java
+

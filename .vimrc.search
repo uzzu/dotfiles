@@ -1,0 +1,7 @@
+set ignorecase
+set smartcase
+set wrapscan
+set noincsearch
+set hlsearch
+set complete+=k
+

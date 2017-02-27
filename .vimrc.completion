@@ -1,0 +1,17 @@
+set wildmenu
+set wildchar=<tab>
+set wildmode=list:full
+set history=1000
+set complete+=k
+set nrformats-=octal
+
+cnoremap <C-p> <Up>
+cnoremap <Up> <C-p>
+cnoremap <C-n> <Down>
+cnoremap <Down> <C-n>
+
+source ~/.vimrc.completion.neocomplete
+
+" go code
+set runtimepath+=$GOROOT/misc/vim
+exe "set runtimepath+=".globpath($GOPATH, "src/github.com/nsf/gocode/vim")

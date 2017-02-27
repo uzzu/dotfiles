@@ -1,0 +1,128 @@
+[[plugins]]
+repo = 'Shougo/neocomplete.vim'
+on_i = 1
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_i = 1
+
+[[plugins]]
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]]
+repo = 'sukima/xmledit'
+on_ft = ['xml', 'html', 'mxml', 'xaml', 'svg']
+
+[[plugins]]
+repo  = 'tpope/vim-haml'
+on_ft = 'haml'
+
+[[plugins]]
+repo = 'rcmdnk/vim-markdown'
+on_ft = ['markdown','mkd']
+hook_add = '''
+    let g:vim_markdown_frontmatter = 1
+    let g:vim_markdown_math = 1
+'''
+
+[[plugins]]
+repo = 'elzr/vim-json'
+on_ft = 'json'
+
+[[plugins]]
+repo = 'aklt/plantuml-syntax'
+on_ft = 'puml'
+
+[[plugins]]
+repo = 'jeroenbourgois/vim-actionscript'
+on_ft = 'actionscript'
+
+[[plugins]]
+repo = 'cespare/mxml.vim'
+on_ft = 'mxml'
+
+[[plugins]]
+repo = 'cespare/mxml.vim'
+on_ft = 'mxml'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+on_ft = 'typescript'
+
+[[plugins]]
+repo = 'kchmck/vim-coffee-script'
+on_ft = 'coffee'
+
+[[plugins]]
+repo = 'yuroyoro/vim-python'
+on_ft = 'python'
+
+[[plugins]]
+repo = 'yuroyoro/vim-scala'
+on_ft = 'scala'
+
+[[plugins]]
+repo = 'vim-ruby/vim-ruby'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'postmodern/vim-yard'
+on_ft = 'yard'
+
+[[plugins]]
+repo = 'tpope/vim-rails'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'skwp/vim-rspec'
+on_ft = 'ruby'
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = 'css'
+
+[[plugins]]
+repo = 'hail2u/vim-css3-syntax'
+on_ft = 'css'
+
+[[plugins]]
+repo = 'cakebaker/scss-syntax.vim'
+on_ft = 'scss'
+
+
+[[plugins]]
+repo = 'taichouchou2/html5.vim'
+on_ft = 'html'
+
+[[plugins]]
+repo = 'othree/yajs.vim'
+on_ft = 'javascript'
+
+[[plugins]]
+repo = 'fatih/vim-go'
+on_ft = 'go'
+
+[[plugins]]
+repo = 'solarnz/thrift.vim'
+on_ft = 'thrift'
+
+
+[[plugins]]
+repo = 'nosami/Omnisharp'
+on_ft = 'cs'
+hook_post_update = '''
+  if dein#util#_is_windows()
+    let cmd = "MSBuild.exe server/OmniSharp.sln /p:Platform='Any CPU'"
+  elseif dein#util#_is_mac()
+    let cmd = "xbuild server/OmniSharp.sln"
+  else
+    let cmd = "xbuild server/OmniSharp.sln"
+  endif
+  let g:dein#plugin.build = cmd
+'''
+
+[[plugins]]
+repo = 'evanmiller/nginx-vim-syntax'
+on_ft = 'nginx'
+

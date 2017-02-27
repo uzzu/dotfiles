@@ -1,4 +1,3 @@
-" view settings
 let g:molokai_original=1
 colorscheme molokai
 set t_Co=256
@@ -16,5 +15,10 @@ set statusline=%<%F\ %m%r%h%w%y%{'['.(&fenc!=''?&fenc:&enc).(&bomb?':BOM':'').']
 set list
 set listchars=tab:>-,extends:<,trail:- ",eol:<
 highlight JpSpace cterm=underline ctermfg=Blue guifg=Blue
-au BufRead,BufNew * match JpSpace /＿/
+autocmd BufRead,BufNew * match JpSpace /＿/
+
+" netrw
+let g:netrw_liststyle = 3
+let g:netrw_altv = 1
+let g:netrw_alto = 1
 
