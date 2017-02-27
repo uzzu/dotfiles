@@ -36,8 +36,7 @@ if [ ! -d $HOME/.rbenv ]; then
   SHNAME=`basename $SHELL`
   export PATH="$HOME/.rbenv/bin:$PATH"
   eval "$(rbenv init - $SHNAME)"
-  RUBY_VERSION=1.9.3-p194
-#  RUBY_VERSION=1.9.3-p374
+  RUBY_VERSION=2.3.1p112
   CONFIGURE_OPTS=--enable-shared rbenv install $RUBY_VERSION
   rbenv rehash; rehash;
   rbenv global $RUBY_VERSION
