@@ -143,9 +143,10 @@ if [ -f  /usr/local/bin/$lua_version/bin ]; then
 fi
 
 # java setting
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 case "$OSTYPE" in
   darwin*)
-    export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     export PATH=$JAVA_HOME/bin:$PATH
     ;;
   linux*)
@@ -167,8 +168,8 @@ fi
 case "$OSTYPE" in
   darwin*)
     local ndk_version=r10e
-    if [ -d /Applications/adt ]; then
-      export ANDROID_SDK_HOME=/Applications/adt
+    if [ -d $HOME/Library/Android/sdk ]; then
+      export ANDROID_SDK_HOME=$HOME/Library/Android/sdk
       export ANDROID_HOME=$ANDROID_SDK_HOME
       export PATH=$ANDROID_SDK_HOME/tools:$PATH
       export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
