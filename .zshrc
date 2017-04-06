@@ -237,6 +237,10 @@ fi
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 
+if [ -f $HOME/.zshrc.local ]; then
+  source $HOME/.zshrc.local
+fi
+
 # use tmux except mac
 case "$OSTYPE" in
   darwin*)
