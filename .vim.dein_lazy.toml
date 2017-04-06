@@ -107,6 +107,9 @@ on_ft = 'go'
 repo = 'solarnz/thrift.vim'
 on_ft = 'thrift'
 
+[[plugins]]
+repo = 'chrisbra/vim-zsh'
+on_ft = 'zsh'
 
 [[plugins]]
 repo = 'nosami/Omnisharp'
