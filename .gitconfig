@@ -77,6 +77,9 @@
     tra     = !git          tr      --all
     trs     = !git          tr      --stat
     tras    = !git          tr      --all           --stat
+    us      = update-index  --skip-worktree
+    usl     = !git          ls-files -v | grep '^S'
+    usn     = update-index  --no-skip-worktree
     undo    = reset         --soft HEAD^
     w       = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git$/\\1\\/\\2/'                              | xargs open
     wp      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git$/\\1\\/\\2/' | xargs -I %% echo %%/pulls  | xargs open
