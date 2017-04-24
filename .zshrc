@@ -166,15 +166,14 @@ fi
 # android setting
 case "$OSTYPE" in
   darwin*)
-    local ndk_version=r10e
     if [ -d $HOME/Library/Android/sdk ]; then
       export ANDROID_SDK_HOME=$HOME/Library/Android/sdk
       export ANDROID_HOME=$ANDROID_SDK_HOME
       export PATH=$ANDROID_SDK_HOME/tools:$PATH
       export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
-      if [ -d $HOME/.ndk/$ndk_version ]; then
-        export ANDROID_NDK_HOME=$HOME/.ndk/$ndk_version
-        export ANDROID_NDK_ROOT=$HOME/.ndk/$ndk_version
+      if [ -d $ANDROID_SDK_HOME/ndk-bundle ]; then
+        export ANDROID_NDK_HOME=$ANDROID_SDK_HOME/ndk-bundle
+        export ANDROID_NDK_ROOT=$ANDROID_SDK_HOME/ndk-bundle
         export PATH=$ANDROID_NDK_HOME:$PATH
       fi
     fi
