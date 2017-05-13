@@ -73,7 +73,7 @@
     st      = status        --short --branch
     stu     = status        --short --branch        --untracked-files=no
     sti     = status        --short --branch        --ignored
-    tr      = log           --graph --date=local    --pretty='italy'
+    tr      = log           --graph --date=local    --pretty='russia'
     tra     = !git          tr      --all
     trs     = !git          tr      --stat
     tras    = !git          tr      --all           --stat
