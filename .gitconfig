@@ -8,6 +8,9 @@
     excludesfile = /Users/uzu-h/.gitignore_global
 [merge]
     tool = vimdiff
+[merge "mergepbx"]
+    name = Xcode project files merger
+    driver = mergepbx %O %A %B
 [color]
     ui = true
 [color "branch"]
