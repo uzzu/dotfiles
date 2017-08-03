@@ -164,6 +164,7 @@ if [ -d /Users/uzu-h/.sdkman/bin ]; then
 fi
 
 # android setting
+local android_sdk_version=25.0.3
 case "$OSTYPE" in
   darwin*)
     if [ -d $HOME/Library/Android/sdk ]; then
@@ -171,6 +172,7 @@ case "$OSTYPE" in
       export ANDROID_HOME=$ANDROID_SDK_HOME
       export PATH=$ANDROID_SDK_HOME/tools:$PATH
       export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
+      export PATH=$ANDROID_SDK_HOME/build-tools/$android_sdk_version:$PATH
       if [ -d $ANDROID_SDK_HOME/ndk-bundle ]; then
         export ANDROID_NDK_HOME=$ANDROID_SDK_HOME/ndk-bundle
         export ANDROID_NDK_ROOT=$ANDROID_SDK_HOME/ndk-bundle
