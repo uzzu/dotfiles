@@ -84,7 +84,7 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^P" history-beginning-search-backward-end
 bindkey "^N" history-beginning-search-forward-end
 
-# correct settings
+# completion settings
 setopt auto_cd
 setopt auto_menu
 setopt correct
@@ -93,6 +93,7 @@ setopt list_types
 setopt magic_equal_subst
 setopt print_eight_bit
 setopt no_beep
+zstyle ':completion:*' use-cache on
 
 # cd settings
 setopt auto_pushd
@@ -135,6 +136,9 @@ export PATH=/usr/local/bin:$PATH
 # user home path
 export PATH=~/bin:$PATH
 
+# current directory
+export PATH=.:$PATH
+
 # lua setting
 local lua_version=5.1.5
 if [ -f  /usr/local/bin/$lua_version/bin ]; then
@@ -171,6 +175,8 @@ case "$OSTYPE" in
       export ANDROID_SDK_HOME=$HOME/Library/Android/sdk
       export ANDROID_HOME=$ANDROID_SDK_HOME
       export PATH=$ANDROID_SDK_HOME/tools:$PATH
+      export PATH=$ANDROID_SDK_HOME/tools/bin:$PATH
+      export PATH=$ANDROID_SDK_HOME/tools/proguard/bin:$PATH
       export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
       export PATH=$ANDROID_SDK_HOME/build-tools/$android_sdk_version:$PATH
       if [ -d $ANDROID_SDK_HOME/ndk-bundle ]; then
