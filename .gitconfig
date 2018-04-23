@@ -5,7 +5,7 @@
     user = uzzu
 [core]
     editor = vim
-    excludesfile = /Users/uzu-h/.gitignore_global
+    excludesfile = ~/.gitignore_global
 [merge]
     tool = vimdiff
 [merge "mergepbx"]
