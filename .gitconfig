@@ -90,3 +90,5 @@
     wi      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git$/\\1\\/\\2/' | xargs -I %% echo %%/issues | xargs open
     ww      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git$/\\1\\/\\2/' | xargs -I %% echo %%/wiki   | xargs open
 
+[credential]
+	helper = cache
