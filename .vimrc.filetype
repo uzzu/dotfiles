@@ -8,4 +8,7 @@ autocmd BufNewFile,BufReadPost *.scss    set filetype=scss
 autocmd BufNewFile,BufReadPost *.coffee  set filetype=coffee
 autocmd BufNewFile,BufReadPost *.ts      set filetype=typescript
 autocmd BufNewFile,BufReadPost *.jad     set filetype=java
+autocmd BufNewFile,BufReadPost *.jsonnet set filetype=jsonnet
+autocmd BufNewFile,BufReadPost *.kt      set filetype=kotlin
+autocmd BufNewFile,BufReadPost *.kts     set filetype=kotlin
 
