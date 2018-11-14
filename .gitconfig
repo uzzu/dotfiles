@@ -37,6 +37,7 @@
     trustExitCode = true
 [alias]
     adm     = !git          ls-files --modified | xargs git add
+    adp     = add           -p
     br      = branch
     bra     = branch        -a
     brd     = branch        -d
