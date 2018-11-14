@@ -134,7 +134,7 @@ fi
 export PATH=/usr/local/bin:$PATH
 
 # user home path
-export PATH=~/bin:$PATH
+export PATH=$HOME/bin:$PATH
 
 # current directory
 export PATH=.:$PATH
@@ -243,6 +243,7 @@ fi
 # for golang
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
+
 
 # load local rc file
 if [ -f $HOME/.zshrc.local ]; then
