@@ -133,12 +133,6 @@ fi
 # for homebrew's bug
 export PATH=/usr/local/bin:$PATH
 
-# user home path
-export PATH=$HOME/bin:$PATH
-
-# current directory
-export PATH=.:$PATH
-
 # lua setting
 local lua_version=5.1.5
 if [ -f  /usr/local/bin/$lua_version/bin ]; then
@@ -248,6 +242,14 @@ fi
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 
+# for cargo
+export PATH=$HOME/.cargo/bin:$PATH
+
+# user home path
+export PATH=$HOME/bin:$PATH
+
+# current directory
+export PATH=.:$PATH
 
 # load local rc file
 if [ -f $HOME/.zshrc.local ]; then
