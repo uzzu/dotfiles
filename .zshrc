@@ -245,11 +245,14 @@ export PATH=$GOPATH/bin:$PATH
 # for cargo
 export PATH=$HOME/.cargo/bin:$PATH
 
+
 # user home path
 export PATH=$HOME/bin:$PATH
 
 # current directory
 export PATH=.:$PATH
+
+fpath+=$HOME/.zsh_functions
 
 # load local rc file
 if [ -f $HOME/.zshrc.local ]; then
