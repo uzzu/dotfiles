@@ -242,9 +242,11 @@ fi
 export GOPATH=$HOME/.go
 export PATH=$GOPATH/bin:$PATH
 
+# for dotnet
+export PATH=/usr/local/share/dotnet:$PATH
+
 # for cargo
 export PATH=$HOME/.cargo/bin:$PATH
-
 
 # user home path
 export PATH=$HOME/bin:$PATH
