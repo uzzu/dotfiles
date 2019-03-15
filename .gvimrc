@@ -44,6 +44,6 @@ if has('win32')
   set guioptions=
 endif
 colorscheme molokai
-set guifont=DejaVu_Sans_Mono:h11:w6.5:cSHIFTJIS
+set guifont=Ubuntu_Mono:h16
 set lines=62 columns=140
 
