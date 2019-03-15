@@ -77,6 +77,7 @@
     st      = status        --short --branch
     stu     = status        --short --branch        --untracked-files=no
     sti     = status        --short --branch        --ignored
+    subp    = submodule     foreach git pull origin master
     tr      = log           --graph --date=local    --pretty='russia'
     tra     = !git          tr      --all
     trs     = !git          tr      --stat
