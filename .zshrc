@@ -130,6 +130,9 @@ if [ -f /usr/bin/vim ]; then
   export EDITOR PATH
 fi
 
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+
 # for homebrew's bug
 export PATH=/usr/local/bin:$PATH
 
