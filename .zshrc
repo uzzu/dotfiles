@@ -144,6 +144,7 @@ alias rm="rm -i"
 alias tmux="tmux -2"
 alias rake="noglob rake"
 alias nvm="nodebrew"
+alias port="lsof -i"
 alias openapplesys="open http://www.apple.com/support/systemstatus/"
 alias openappledev="open https://developer.apple.com/system-status/"
 
