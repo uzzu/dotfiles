@@ -171,6 +171,13 @@ if [ -f  /usr/local/bin/$lua_version/bin ]; then
   export PATH=/usr/local/lib/lua/$lua_version/bin:$PATH
 fi
 
+# llvm
+case "$OSTYPE" in
+  darwin*)
+    export PATH="$PATH:`brew --prefix llvm`/bin"
+    ;;
+esac
+
 # java setting
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 case "$OSTYPE" in
