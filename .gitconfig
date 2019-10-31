@@ -75,6 +75,7 @@
     pr      = pull          --rebase
     rmd     = !git          ls-files --deleted | xargs git rm
     st      = status        --short --branch
+    sc      = !git          status  --short --branch | grep -e '^[A-Z]\\{2\\} '
     stu     = status        --short --branch        --untracked-files=no
     sti     = status        --short --branch        --ignored
     subp    = submodule     foreach git pull origin master
