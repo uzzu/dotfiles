@@ -55,6 +55,23 @@ function diffjar() {
   rm -rf ./b
 }
 
+function javaenv() {
+  local err specified
+  if [[ -z `echo $1` ]]; then
+    echo $JAVA_HOME
+    return
+  fi
+  err=`/usr/libexec/java_home -v $1 2>&1 >/dev/null`
+  if [[ -n $err ]] then
+    echo $err
+    return
+  fi
+  specified=`/usr/libexec/java_home -v $1`
+  echo "export JAVA_HOME=$specified"
+  export JAVA_HOME=$specified
+  export PATH=$JAVA_HOME/bin:$PATH
+}
+
 # keybind settings
 bindkey -v
 
