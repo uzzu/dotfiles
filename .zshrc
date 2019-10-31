@@ -147,6 +147,11 @@ alias nvm="nodebrew"
 alias port="lsof -i"
 alias openapplesys="open http://www.apple.com/support/systemstatus/"
 alias openappledev="open https://developer.apple.com/system-status/"
+if [[ -x `which colordiff` ]]; then
+  alias diff='colordiff -u'
+else
+  alias diff='diff -u'
+fi
 
 # editor setting
 if [ -f /usr/bin/vim ]; then
