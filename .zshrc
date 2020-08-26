@@ -148,6 +148,7 @@ alias port="lsof -i"
 alias ipv4="ifconfig en0 | grep 'inet ' | awk '{print $2}'"
 alias openapplesys="open http://www.apple.com/support/systemstatus/"
 alias openappledev="open https://developer.apple.com/system-status/"
+alias maged="say -v Maged deh key tah deh key tah yatt deh key mash tah po po po po po po deh key mash tah yo"
 if [[ -x `which colordiff` ]]; then
   alias diff='colordiff -u'
 else
