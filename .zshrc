@@ -185,8 +185,8 @@ case "$OSTYPE" in
   darwin*)
     export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
     export PATH=$JAVA_HOME/bin:$PATH
-    export JDK_16=$(/usr/libexec/java_home -v 1.6)
-    export JDK_17=$(/usr/libexec/java_home -v 1.7)
+    export JDK_16=$(/usr/libexec/java_home -v 1.8)
+    export JDK_17=$(/usr/libexec/java_home -v 1.8)
     export JDK_18=$(/usr/libexec/java_home -v 1.8)
     export JDK_9=$(/usr/libexec/java_home -v 9)
     ;;
