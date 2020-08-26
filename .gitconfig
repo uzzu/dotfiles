@@ -13,10 +13,6 @@
     driver = mergepbx %O %A %B
 [color]
     ui = true
-[color "branch"]
-    current = green black
-    local   = green
-    remote  = cyan
 [pretty]
     simplelog = %C(green)%h%Creset %cd %C(cyan)%an%Creset - %s %C(red)%d%Creset
     tricolor = %C(green reverse)%h%Creset%C(blue reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(cyan)(%cd)%Creset
@@ -29,6 +25,7 @@
     mongolia = %C(red reverse)%h%Creset%C(blue reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(cyan)(%cd)%Creset
     yemen = %C(red reverse)%h%Creset%C(white reverse)%an%Creset%C(black reverse)%d%Creset %C(white bold)%s%Creset %C(cyan)(%cd)%Creset
     sgi = %C(blue reverse)%h%Creset%C(yellow reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(cyan)(%cd)%Creset
+    zenburn = %C(green reverse)%h%Creset%C(white reverse)%an%Creset%C(magenta reverse)%d%Creset %C(white bold)%s%Creset %C(cyan)(%cd)%Creset
 [difftool "sourcetree"]
     cmd = opendiff \"$LOCAL\" \"$REMOTE\"
     path = 
@@ -79,7 +76,7 @@
     stu     = status        --short --branch        --untracked-files=no
     sti     = status        --short --branch        --ignored
     subp    = submodule     foreach git pull origin master
-    tr      = log           --graph --date=local    --pretty='myanmar'
+    tr      = log           --graph --date=local    --pretty='zenburn'
     tra     = !git          tr      --all
     trs     = !git          tr      --stat
     tras    = !git          tr      --all           --stat
