@@ -206,7 +206,7 @@ if [ -d /Users/uzu-h/.sdkman/bin ]; then
 fi
 
 # android setting
-local android_sdk_version=25.0.3
+local android_sdk_version=30.0.0
 case "$OSTYPE" in
   darwin*)
     if [ -d $HOME/Library/Android/sdk ]; then
