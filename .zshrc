@@ -202,7 +202,7 @@ case "$OSTYPE" in
 esac
 
 # sdkman(gradle, maven) setting
-if [ -d /Users/uzu-h/.sdkman/bin ]; then
+if [ -d $HOME/.sdkman/bin ]; then
   export SDKMAN_DIR=$HOME/.sdkman
   [[ -s $SDKMAN_DIR/bin/sdkman-init.sh ]] && source $SDKMAN_DIR/bin/sdkman-init.sh
 fi
