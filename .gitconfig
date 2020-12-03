@@ -43,6 +43,7 @@
     co      = checkout
     cob     = checkout      -b
     cobr    = "!f() { if [ $# -ne 2 ]; then echo \"Usage: git cobr {remotename} {branchname}\"; exit; fi; git fep ${1} ${2};  git cob ${2} remotes/${1}/${2}; git co ${2}; };f"
+    copr    = "!f() { git fetch ${1} pull/${2}/head:pr/${2} && git checkout pr/${2}; };f"
     conf    = !vim          ~/.gitconfig
     cln     = config        --local user.name
     clm     = config        --local user.email
