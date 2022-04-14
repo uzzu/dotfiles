@@ -204,5 +204,10 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
 # End of https://www.gitignore.io/api/vim,macos,linux,emacs,windows,intellij
+
+# ctags
+.tags
+
+# solargraph
+.solargraph.yml
