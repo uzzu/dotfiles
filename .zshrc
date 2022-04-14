@@ -58,7 +58,7 @@ function diffjar() {
 function javaenv() {
   local err specified
   if [[ -z `echo $1` ]]; then
-    echo $JAVA_HOME
+    echo `/usr/libexec/java_home -v`
     return
   fi
   err=`/usr/libexec/java_home -v $1 2>&1 >/dev/null`
@@ -66,7 +66,7 @@ function javaenv() {
     echo $err
     return
   fi
-  specified=`/usr/libexec/java_home -v $1`
+  specified=`unset JAVA_HOME; /usr/libexec/java_home -v $1`
   echo "export JAVA_HOME=$specified"
   export JAVA_HOME=$specified
   export PATH=$JAVA_HOME/bin:$PATH
@@ -165,9 +165,6 @@ fi
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 
-# for homebrew's bug
-export PATH=/usr/local/bin:$PATH
-
 # lua setting
 local lua_version=5.1.5
 if [ -f  /usr/local/bin/$lua_version/bin ]; then
@@ -185,7 +182,7 @@ esac
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 case "$OSTYPE" in
   darwin*)
-    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+    export JAVA_HOME=$(/usr/libexec/java_home -v 11)
     export PATH=$JAVA_HOME/bin:$PATH
     export JDK_16=$(/usr/libexec/java_home -v 1.8)
     export JDK_17=$(/usr/libexec/java_home -v 1.8)
@@ -266,7 +263,7 @@ fi
 if [ -d $HOME/.pyenv ]; then
   if [ -d $HOME/.pyenv/bin ]; then
     export PATH=$HOME/.pyenv/bin:$PATH
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
   fi
 elif [ -d /usr/local/share ]; then
