@@ -1,3 +1,7 @@
 .vim/bundle/*
 .m2/repository
 .config/configstore
+.config/irb/irb_history
+.config/Yamaha/SYNCROOM.ini
+.config/yarn/global
+.idea
