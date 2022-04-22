@@ -165,6 +165,10 @@ fi
 # XDG
 export XDG_CONFIG_HOME=$HOME/.config
 
+# for homebrew's bug
+export PATH=/opt/homebrew/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+
 # lua setting
 local lua_version=5.1.5
 if [ -f  /usr/local/bin/$lua_version/bin ]; then
@@ -190,18 +194,15 @@ case "$OSTYPE" in
     export JDK_9=$(/usr/libexec/java_home -v 9)
     ;;
   linux*)
-    local java_version=java-6-sun-1.6.0.26
-    if [ -d /usr/lib/jvm/$java_version ]; then
-      export JAVA_HOME=/usr/lib/jvm/$java_version
-      export PATH=$JAVA_HOME/bin:$PATH
-    fi
     ;;
 esac
 
-# sdkman(gradle, maven) setting
+# sdkman(gradle, maven, java, kotlin) setting
 if [ -d $HOME/.sdkman/bin ]; then
   export SDKMAN_DIR=$HOME/.sdkman
   [[ -s $SDKMAN_DIR/bin/sdkman-init.sh ]] && source $SDKMAN_DIR/bin/sdkman-init.sh
+  export JAVA_HOME=$HOME/.sdkman/candidates/java/current
+  export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 # android setting
@@ -209,16 +210,15 @@ local android_sdk_version=30.0.0
 case "$OSTYPE" in
   darwin*)
     if [ -d $HOME/Library/Android/sdk ]; then
-      export ANDROID_SDK_HOME=$HOME/Library/Android/sdk
-      export ANDROID_HOME=$ANDROID_SDK_HOME
-      export PATH=$ANDROID_SDK_HOME/tools:$PATH
-      export PATH=$ANDROID_SDK_HOME/tools/bin:$PATH
-      export PATH=$ANDROID_SDK_HOME/tools/proguard/bin:$PATH
-      export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
-      export PATH=$ANDROID_SDK_HOME/build-tools/$android_sdk_version:$PATH
-      if [ -d $ANDROID_SDK_HOME/ndk-bundle ]; then
-        export ANDROID_NDK_HOME=$ANDROID_SDK_HOME/ndk-bundle
-        export ANDROID_NDK_ROOT=$ANDROID_SDK_HOME/ndk-bundle
+      export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+      export PATH=$ANDROID_SDK_ROOT/tools:$PATH
+      export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
+      export PATH=$ANDROID_SDK_ROOT/tools/proguard/bin:$PATH
+      export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+      export PATH=$ANDROID_SDK_ROOT/build-tools/$android_sdk_version:$PATH
+      if [ -d $ANDROID_SDK_ROOT/ndk-bundle ]; then
+        export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk-bundle
+        export ANDROID_NDK_ROOT=$ANDROID_SDK_ROOT/ndk-bundle
         export PATH=$ANDROID_NDK_HOME:$PATH
       fi
     fi
