@@ -58,7 +58,7 @@ function diffjar() {
 function javaenv() {
   local err specified
   if [[ -z `echo $1` ]]; then
-    echo $JAVA_HOME
+    echo `/usr/libexec/java_home -v`
     return
   fi
   err=`/usr/libexec/java_home -v $1 2>&1 >/dev/null`
@@ -66,7 +66,7 @@ function javaenv() {
     echo $err
     return
   fi
-  specified=`/usr/libexec/java_home -v $1`
+  specified=`unset JAVA_HOME; /usr/libexec/java_home -v $1`
   echo "export JAVA_HOME=$specified"
   export JAVA_HOME=$specified
   export PATH=$JAVA_HOME/bin:$PATH
@@ -166,6 +166,7 @@ fi
 export XDG_CONFIG_HOME=$HOME/.config
 
 # for homebrew's bug
+export PATH=/opt/homebrew/bin:$PATH
 export PATH=/usr/local/bin:$PATH
 
 # lua setting
@@ -185,7 +186,7 @@ esac
 export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 case "$OSTYPE" in
   darwin*)
-    export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+    export JAVA_HOME=$(/usr/libexec/java_home -v 11)
     export PATH=$JAVA_HOME/bin:$PATH
     export JDK_16=$(/usr/libexec/java_home -v 1.8)
     export JDK_17=$(/usr/libexec/java_home -v 1.8)
@@ -193,18 +194,15 @@ case "$OSTYPE" in
     export JDK_9=$(/usr/libexec/java_home -v 9)
     ;;
   linux*)
-    local java_version=java-6-sun-1.6.0.26
-    if [ -d /usr/lib/jvm/$java_version ]; then
-      export JAVA_HOME=/usr/lib/jvm/$java_version
-      export PATH=$JAVA_HOME/bin:$PATH
-    fi
     ;;
 esac
 
-# sdkman(gradle, maven) setting
+# sdkman(gradle, maven, java, kotlin) setting
 if [ -d $HOME/.sdkman/bin ]; then
   export SDKMAN_DIR=$HOME/.sdkman
   [[ -s $SDKMAN_DIR/bin/sdkman-init.sh ]] && source $SDKMAN_DIR/bin/sdkman-init.sh
+  export JAVA_HOME=$HOME/.sdkman/candidates/java/current
+  export PATH=$JAVA_HOME/bin:$PATH
 fi
 
 # android setting
@@ -219,8 +217,8 @@ case "$OSTYPE" in
       export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
       export PATH=$ANDROID_SDK_ROOT/build-tools/$android_sdk_version:$PATH
       if [ -d $ANDROID_SDK_ROOT/ndk-bundle ]; then
-        export ANDROID_NDK_HOME=$ANDROID_SDK_HOME/ndk-bundle
-        export ANDROID_NDK_ROOT=$ANDROID_SDK_HOME/ndk-bundle
+        export ANDROID_NDK_HOME=$ANDROID_SDK_ROOT/ndk-bundle
+        export ANDROID_NDK_ROOT=$ANDROID_SDK_ROOT/ndk-bundle
         export PATH=$ANDROID_NDK_HOME:$PATH
       fi
     fi
@@ -265,7 +263,7 @@ fi
 if [ -d $HOME/.pyenv ]; then
   if [ -d $HOME/.pyenv/bin ]; then
     export PATH=$HOME/.pyenv/bin:$PATH
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
     eval "$(pyenv virtualenv-init -)"
   fi
 elif [ -d /usr/local/share ]; then

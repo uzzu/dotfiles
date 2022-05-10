@@ -1,12 +1,4 @@
 [[plugins]]
-repo = 'Shougo/neocomplete.vim'
-on_i = 1
-
-[[plugins]]
-repo = 'mattn/emmet-vim'
-on_i = 1
-
-[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
@@ -83,13 +75,8 @@ repo = 'hail2u/vim-css3-syntax'
 on_ft = 'css'
 
 [[plugins]]
-repo = 'hail2u/vim-css3-syntax'
-on_ft = 'css'
-
-[[plugins]]
 repo = 'cakebaker/scss-syntax.vim'
 on_ft = 'scss'
-
 
 [[plugins]]
 repo = 'taichouchou2/html5.vim'
@@ -104,26 +91,8 @@ repo = 'fatih/vim-go'
 on_ft = 'go'
 
 [[plugins]]
-repo = 'solarnz/thrift.vim'
-on_ft = 'thrift'
-
-[[plugins]]
 repo = 'chrisbra/vim-zsh'
 on_ft = 'zsh'
-
-[[plugins]]
-repo = 'nosami/Omnisharp'
-on_ft = 'cs'
-hook_post_update = '''
-  if dein#util#_is_windows()
-    let cmd = "MSBuild.exe server/OmniSharp.sln /p:Platform='Any CPU'"
-  elseif dein#util#_is_mac()
-    let cmd = "xbuild server/OmniSharp.sln"
-  else
-    let cmd = "xbuild server/OmniSharp.sln"
-  endif
-  let g:dein#plugin.build = cmd
-'''
 
 [[plugins]]
 repo = 'evanmiller/nginx-vim-syntax'
