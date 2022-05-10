@@ -212,14 +212,13 @@ local android_sdk_version=30.0.0
 case "$OSTYPE" in
   darwin*)
     if [ -d $HOME/Library/Android/sdk ]; then
-      export ANDROID_SDK_HOME=$HOME/Library/Android/sdk
-      export ANDROID_HOME=$ANDROID_SDK_HOME
-      export PATH=$ANDROID_SDK_HOME/tools:$PATH
-      export PATH=$ANDROID_SDK_HOME/tools/bin:$PATH
-      export PATH=$ANDROID_SDK_HOME/tools/proguard/bin:$PATH
-      export PATH=$ANDROID_SDK_HOME/platform-tools:$PATH
-      export PATH=$ANDROID_SDK_HOME/build-tools/$android_sdk_version:$PATH
-      if [ -d $ANDROID_SDK_HOME/ndk-bundle ]; then
+      export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+      export PATH=$ANDROID_SDK_ROOT/tools:$PATH
+      export PATH=$ANDROID_SDK_ROOT/tools/bin:$PATH
+      export PATH=$ANDROID_SDK_ROOT/tools/proguard/bin:$PATH
+      export PATH=$ANDROID_SDK_ROOT/platform-tools:$PATH
+      export PATH=$ANDROID_SDK_ROOT/build-tools/$android_sdk_version:$PATH
+      if [ -d $ANDROID_SDK_ROOT/ndk-bundle ]; then
         export ANDROID_NDK_HOME=$ANDROID_SDK_HOME/ndk-bundle
         export ANDROID_NDK_ROOT=$ANDROID_SDK_HOME/ndk-bundle
         export PATH=$ANDROID_NDK_HOME:$PATH
