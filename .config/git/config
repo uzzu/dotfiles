@@ -5,7 +5,6 @@
     user = uzzu
 [core]
     editor = vim
-    excludesfile = ~/.gitignore_global
 [merge]
     tool = vimdiff
 [merge "mergepbx"]
@@ -26,12 +25,6 @@
     yemen = %C(red reverse)%h%Creset%C(white reverse)%an%Creset%C(black reverse)%d%Creset %C(white bold)%s%Creset %C(cyan)(%cd)%Creset
     sgi = %C(blue reverse)%h%Creset%C(yellow reverse)%an%Creset%C(red reverse)%d%Creset %C(white bold)%s%Creset %C(cyan)(%cd)%Creset
     zenburn = %C(green reverse)%h%Creset%C(white reverse)%an%Creset%C(magenta reverse)%d%Creset %C(white bold)%s%Creset %C(cyan)(%cd)%Creset
-[difftool "sourcetree"]
-    cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-    path = 
-[mergetool "sourcetree"]
-    cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-    trustExitCode = true
 [alias]
     adm     = !git          ls-files --modified | xargs git add
     adp     = add           -p
@@ -44,7 +37,7 @@
     cob     = checkout      -b
     cobr    = "!f() { if [ $# -ne 2 ]; then echo \"Usage: git cobr {remotename} {branchname}\"; exit; fi; git fep ${1} ${2};  git cob ${2} remotes/${1}/${2}; git co ${2}; };f"
     copr    = "!f() { git fetch ${1} pull/${2}/head:pr/${2} && git checkout pr/${2}; };f"
-    conf    = !vim          ~/.gitconfig
+    conf    = !vim          ~/.config/git/config
     cln     = config        --local user.name
     clm     = config        --local user.email
     ci      = commit
@@ -91,4 +84,4 @@
     ww      = !git          config --get remote.origin.url | sed 's/git@\\(.*\\):\\(.*\\)\\/\\(.*\\)\\.git$/https:\\/\\1\\/\\2\\/\\3/' | sed 's/\\(.*\\)\\/\\(.*\\)\\.git$/\\1\\/\\2/' | xargs -I %% echo %%/wiki   | xargs open
 
 [credential]
-	helper = cache
+    helper = cache
