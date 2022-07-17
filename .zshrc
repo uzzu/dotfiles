@@ -58,12 +58,6 @@ function diffjar() {
   rm -rf ./b
 }
 
-function jsonnet_fmt() {
-  jsonnetfmt $1 >$1.tmp
-  mv $1.tmp $1
-  rm $1.tmp
-}
-
 # keybind settings
 bindkey -v
 
