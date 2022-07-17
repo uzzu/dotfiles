@@ -276,15 +276,3 @@ fpath+=$HOME/.zsh_functions
 if [ -f $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
-
-# use tmux except mac
-case "$OSTYPE" in
-  darwin*)
-    ;;
-  linux*)
-    if which tmux 2>&1 >/dev/null; then
-      test -z "$TMUX" && (tmux attach || tmux new-session)
-    fi
-    ;;
-esac
-
