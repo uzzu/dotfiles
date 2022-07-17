@@ -141,6 +141,8 @@ if [[ -x `which colordiff` ]]; then
 else
   alias diff='diff -u'
 fi
+alias vimrc="vim $HOME/.vim/vimrc"
+alias zshrc="vim $HOME/.zshrc"
 
 # editor setting
 if [ -f /usr/bin/vim ]; then
