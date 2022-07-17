@@ -74,7 +74,6 @@ zstyle ':completion' list-colors 'di=01:34:ln=01;36:ex=01;32;bd=40;33;01:cd=40;3
 # prompt settings
 setopt prompt_subst
 PROMPT="%n@%m%# "
-# PROMPT="$ "
 RPROMPT='[`rprompt-git-current-branch`%~]'
 
 # history settings
