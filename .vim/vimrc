@@ -1,8 +1,8 @@
 scriptencoding utf-8
 set encoding=utf-8
 
-let $MYVIMDIR=expand("<sfile>:h")
-source $MYVIMDIR/xdg.vim
+let $VIMDIR=expand("<sfile>:h")
+source $VIMDIR/xdg.vim
 
 " Plugins
 packadd vim-jetpack
@@ -67,21 +67,11 @@ cnoremap <Up> <C-p>
 cnoremap <C-n> <Down>
 cnoremap <Down> <C-n>
 
-" Normal mode keymap
-nnoremap j gj
-nnoremap k gk
-nnoremap f 10j
-nnoremap b 10k
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-nnoremap <C-n> gt
-nnoremap <C-p> gT
-
 " Backup
 set nobackup
 set noswapfile
+
+source $VIMDIR/shared.vim
 
 if filereadable(glob('~/.vimrc.local'))
   source ~/.vimrc.local
