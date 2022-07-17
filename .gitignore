@@ -1,8 +1,12 @@
 .vim/bundle/*
+.vim/pack
 .m2/repository
+.config/jgit
+.config/mume
 .config/configstore
 .config/irb/irb_history
 .config/Yamaha/SYNCROOM.ini
 .config/yarn/global
 .config/gtk-2.0/gtkfilechooser.ini
 .idea
+.nvimlog

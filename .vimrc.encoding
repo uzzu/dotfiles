@@ -1,6 +1,0 @@
-set termencoding=utf-8
-set fileencodings=utf-8,iso-2022-jp,cp932,euc-jp
-set enc=utf-8
-set ff=unix
-autocmd BufNewFile,BufReadPost * set fileencoding=utf-8
-
