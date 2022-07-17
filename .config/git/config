@@ -56,7 +56,8 @@
     diiiii  = diff          HEAD~~~~~
     fe      = fetch
     fep     = fetch         --prune
-    ignore  = !vim          .gitignore
+    ig      = !vim          .gitignore
+    igg     = !vim          ~/.config/git/ignore
     info    = remote        show origin
     kk      = !gitk
     kka     = !gitk         --all
