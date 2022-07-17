@@ -7,6 +7,9 @@ compinit
 autoload -Uz colors
 colors
 
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+
 # git prompt
 function rprompt-git-current-branch {
   local name st color
@@ -145,8 +148,6 @@ if [ -f /usr/bin/vim ]; then
   export EDITOR PATH
 fi
 
-# XDG
-export XDG_CONFIG_HOME=$HOME/.config
 
 # for homebrew's bug
 export PATH=/opt/homebrew/bin:$PATH
