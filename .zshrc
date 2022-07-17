@@ -55,23 +55,6 @@ function diffjar() {
   rm -rf ./b
 }
 
-function javaenv() {
-  local err specified
-  if [[ -z `echo $1` ]]; then
-    echo `/usr/libexec/java_home -v`
-    return
-  fi
-  err=`/usr/libexec/java_home -v $1 2>&1 >/dev/null`
-  if [[ -n $err ]] then
-    echo $err
-    return
-  fi
-  specified=`unset JAVA_HOME; /usr/libexec/java_home -v $1`
-  echo "export JAVA_HOME=$specified"
-  export JAVA_HOME=$specified
-  export PATH=$JAVA_HOME/bin:$PATH
-}
-
 function jsonnet_fmt() {
   jsonnetfmt $1 >$1.tmp
   mv $1.tmp $1
@@ -182,22 +165,8 @@ case "$OSTYPE" in
     ;;
 esac
 
-# java setting
-export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
-case "$OSTYPE" in
-  darwin*)
-    export JAVA_HOME=$(/usr/libexec/java_home -v 11)
-    export PATH=$JAVA_HOME/bin:$PATH
-    export JDK_16=$(/usr/libexec/java_home -v 1.8)
-    export JDK_17=$(/usr/libexec/java_home -v 1.8)
-    export JDK_18=$(/usr/libexec/java_home -v 1.8)
-    export JDK_9=$(/usr/libexec/java_home -v 9)
-    ;;
-  linux*)
-    ;;
-esac
-
 # sdkman(gradle, maven, java, kotlin) setting
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 if [ -d $HOME/.sdkman/bin ]; then
   export SDKMAN_DIR=$HOME/.sdkman
   [[ -s $SDKMAN_DIR/bin/sdkman-init.sh ]] && source $SDKMAN_DIR/bin/sdkman-init.sh
