@@ -250,8 +250,13 @@ if [ -d $HOME/.nodebrew/current/bin ]; then
 fi
 
 # for golang
-export GOPATH=$HOME/.go
-export PATH=$GOPATH/bin:$PATH
+if [ -d $HOME/.goenv ]; then
+  export GOENV_ROOT="$HOME/.goenv"
+  export PATH="$GOENV_ROOT/bin:$PATH"
+elif [ -d $HOME/.go ]; then
+  export GOPATH=$HOME/.go
+  export PATH=$GOPATH/bin:$PATH
+fi
 
 # for dotnet
 export PATH=/usr/local/share/dotnet:$PATH
