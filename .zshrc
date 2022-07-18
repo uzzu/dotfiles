@@ -259,13 +259,11 @@ if [ -d $HOME/.rbenv ]; then
   [ -f $HOME/.rbenv/completions/rbenv.zsh ] && source $HOME/.rbenv/completions/rbenv.zsh
 fi
 
-# for python (using pyenv, and python-virtualenv)
+# for python (using pyenv)
 if [ -d $HOME/.pyenv ]; then
-  if [ -d $HOME/.pyenv/bin ]; then
-    export PATH=$HOME/.pyenv/bin:$PATH
-    eval "$(pyenv init --path)"
-    eval "$(pyenv virtualenv-init -)"
-  fi
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
 elif [ -d /usr/local/share ]; then
   if [ -d /usr/local/share/python ]; then
     export PATH=/usr/local/share/python:$PATH
