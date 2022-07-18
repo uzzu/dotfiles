@@ -7,6 +7,9 @@ compinit
 autoload -Uz colors
 colors
 
+# XDG
+export XDG_CONFIG_HOME=$HOME/.config
+
 # git prompt
 function rprompt-git-current-branch {
   local name st color
@@ -55,29 +58,6 @@ function diffjar() {
   rm -rf ./b
 }
 
-function javaenv() {
-  local err specified
-  if [[ -z `echo $1` ]]; then
-    echo `/usr/libexec/java_home -v`
-    return
-  fi
-  err=`/usr/libexec/java_home -v $1 2>&1 >/dev/null`
-  if [[ -n $err ]] then
-    echo $err
-    return
-  fi
-  specified=`unset JAVA_HOME; /usr/libexec/java_home -v $1`
-  echo "export JAVA_HOME=$specified"
-  export JAVA_HOME=$specified
-  export PATH=$JAVA_HOME/bin:$PATH
-}
-
-function jsonnet_fmt() {
-  jsonnetfmt $1 >$1.tmp
-  mv $1.tmp $1
-  rm $1.tmp
-}
-
 # keybind settings
 bindkey -v
 
@@ -88,7 +68,6 @@ zstyle ':completion' list-colors 'di=01:34:ln=01;36:ex=01;32;bd=40;33;01:cd=40;3
 # prompt settings
 setopt prompt_subst
 PROMPT="%n@%m%# "
-# PROMPT="$ "
 RPROMPT='[`rprompt-git-current-branch`%~]'
 
 # history settings
@@ -155,6 +134,8 @@ if [[ -x `which colordiff` ]]; then
 else
   alias diff='diff -u'
 fi
+alias vimrc="vim $HOME/.vim/vimrc"
+alias zshrc="vim $HOME/.zshrc"
 
 # editor setting
 if [ -f /usr/bin/vim ]; then
@@ -162,8 +143,6 @@ if [ -f /usr/bin/vim ]; then
   export EDITOR PATH
 fi
 
-# XDG
-export XDG_CONFIG_HOME=$HOME/.config
 
 # for homebrew's bug
 export PATH=/opt/homebrew/bin:$PATH
@@ -182,22 +161,8 @@ case "$OSTYPE" in
     ;;
 esac
 
-# java setting
-export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
-case "$OSTYPE" in
-  darwin*)
-    export JAVA_HOME=$(/usr/libexec/java_home -v 11)
-    export PATH=$JAVA_HOME/bin:$PATH
-    export JDK_16=$(/usr/libexec/java_home -v 1.8)
-    export JDK_17=$(/usr/libexec/java_home -v 1.8)
-    export JDK_18=$(/usr/libexec/java_home -v 1.8)
-    export JDK_9=$(/usr/libexec/java_home -v 9)
-    ;;
-  linux*)
-    ;;
-esac
-
 # sdkman(gradle, maven, java, kotlin) setting
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF-8
 if [ -d $HOME/.sdkman/bin ]; then
   export SDKMAN_DIR=$HOME/.sdkman
   [[ -s $SDKMAN_DIR/bin/sdkman-init.sh ]] && source $SDKMAN_DIR/bin/sdkman-init.sh
@@ -276,8 +241,13 @@ if [ -d $HOME/.nodebrew/current/bin ]; then
 fi
 
 # for golang
-export GOPATH=$HOME/.go
-export PATH=$GOPATH/bin:$PATH
+if [ -d $HOME/.goenv ]; then
+  export GOENV_ROOT="$HOME/.goenv"
+  export PATH="$GOENV_ROOT/bin:$PATH"
+elif [ -d $HOME/.go ]; then
+  export GOPATH=$HOME/.go
+  export PATH=$GOPATH/bin:$PATH
+fi
 
 # for dotnet
 export PATH=/usr/local/share/dotnet:$PATH
@@ -297,15 +267,3 @@ fpath+=$HOME/.zsh_functions
 if [ -f $HOME/.zshrc.local ]; then
   source $HOME/.zshrc.local
 fi
-
-# use tmux except mac
-case "$OSTYPE" in
-  darwin*)
-    ;;
-  linux*)
-    if which tmux 2>&1 >/dev/null; then
-      test -z "$TMUX" && (tmux attach || tmux new-session)
-    fi
-    ;;
-esac
-

@@ -1,4 +1,4 @@
-" normal mode keymap
+" Normal mode keymap
 nnoremap j gj
 nnoremap k gk
 nnoremap f 10j

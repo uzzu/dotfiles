@@ -211,3 +211,5 @@ $RECYCLE.BIN/
 
 # solargraph
 .solargraph.yml
+
+.idea/codeStyles/Project.xml
