@@ -8,4 +8,5 @@
 .config/Yamaha/SYNCROOM.ini
 .config/yarn/global
 .config/gtk-2.0/gtkfilechooser.ini
+.config/.isolated-storage
 .idea
