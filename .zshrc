@@ -240,7 +240,7 @@ if [ -d $HOME/.nodebrew/current/bin ]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 
-# for golang
+# for go
 if [ -d $HOME/.goenv ]; then
   export GOENV_ROOT="$HOME/.goenv"
   export PATH="$GOENV_ROOT/bin:$PATH"
