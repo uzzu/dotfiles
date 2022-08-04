@@ -123,7 +123,7 @@ alias mv="mv -i"
 alias rm="rm -i"
 alias tmux="tmux -2"
 alias rake="noglob rake"
-alias nvm="nodebrew"
+alias nodeenv="nodenv"
 alias port="lsof -i"
 alias ipv4="ifconfig en0 | grep 'inet ' | awk '{print $2}'"
 alias openapplesys="open http://www.apple.com/support/systemstatus/"
@@ -235,9 +235,10 @@ elif [ -d /usr/local/share ]; then
   fi
 fi
 
-# for node.js (using nodebrew)
-if [ -d $HOME/.nodebrew/current/bin ]; then
-  export PATH=$HOME/.nodebrew/current/bin:$PATH
+# for node.js (using nodenv)
+if [ -d $HOME/.nodenv ]; then
+  export PATH=$HOME/.nodenv/bin:$PATH
+  eval "$(nodenv init -)"
 fi
 
 # for go
