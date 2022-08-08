@@ -245,6 +245,7 @@ fi
 if [ -d $HOME/.goenv ]; then
   export GOENV_ROOT="$HOME/.goenv"
   export PATH="$GOENV_ROOT/bin:$PATH"
+  eval "$(goenv init -)"
 elif [ -d $HOME/.go ]; then
   export GOPATH=$HOME/.go
   export PATH=$GOPATH/bin:$PATH
